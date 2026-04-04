@@ -65,11 +65,11 @@ export default function Articles() {
                   <span className="font-medium">{t("featured.date")}</span>
                 </div>
 
-                <h3 className="text-xl md:text-2xl font-bold mb-4 text-[#1A1A1A] hover:text-[#8B734B] cursor-pointer transition-colors">
+                <h3 className="text-xl text-start md:text-2xl font-bold mb-4 text-[#1A1A1A] hover:text-[#8B734B] cursor-pointer transition-colors">
                   {t("featured.title")}
                 </h3>
 
-                <p className="text-gray-500 text-base leading-relaxed mb-6">
+                <p className="text-gray-500 text-start text-base leading-relaxed mb-6">
                   {t("featured.desc")}
                 </p>
               </div>
@@ -98,11 +98,11 @@ export default function Articles() {
                     <span className="font-medium">{article.date}</span>
                   </div>
 
-                  <h3 className="text-xl md:text-2xl font-bold mb-3 text-[#1A1A1A] hover:text-[#8B734B] cursor-pointer transition-colors line-clamp-1">
+                  <h3 className="text-xl md:text-2xl text-start font-bold mb-3 text-[#1A1A1A] hover:text-[#8B734B] cursor-pointer transition-colors line-clamp-1">
                     {article.title}
                   </h3>
 
-                  <p className="text-gray-500 text-sm leading-relaxed line-clamp-2">
+                  <p className="text-gray-500 text-sm text-start leading-relaxed line-clamp-2">
                     {article.desc}
                   </p>
                 </div>

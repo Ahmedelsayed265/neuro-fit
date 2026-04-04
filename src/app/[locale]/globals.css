@@ -12,7 +12,6 @@
   --font-mono: var(--font-geist-mono);
 }
 
-
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -30,7 +29,10 @@
   background: #b89a44;
 }
 
-section[id] {
+#medical-team,
+#about-us,
+#services,
+#contact-us {
   scroll-margin-top: 100px;
 }
 
@@ -41,8 +43,8 @@ body {
 
   .hero_gradient {
     background:
-      linear-gradient(0deg, rgba(205, 178, 85, 0.39), rgba(205, 178, 85, 0.39)),
-      linear-gradient(0deg, rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.36));
+      linear-gradient(0deg, #cdb25524, #cdb2553d),
+      linear-gradient(0deg, #0000005c, #0000005c);
   }
 
   .swiper-pagination-bullet {
@@ -53,6 +55,7 @@ body {
     cursor: pointer;
     background: none;
     opacity: 1 !important;
+    transition: all 0.3s ease;
   }
 
   .swiper-pagination-bullet-active {

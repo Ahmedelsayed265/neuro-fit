@@ -21,6 +21,7 @@ export default function Hero() {
           <Swiper
             spaceBetween={0}
             centeredSlides={true}
+            loop={true}
             autoplay={{
               delay: 5000,
               disableOnInteraction: false,
@@ -47,12 +48,12 @@ export default function Hero() {
             </SwiperSlide>
           </Swiper>
 
-          <button className="swiper-button-prev-custom absolute left-6 top-1/2 -translate-y-1/2 z-10 cursor-pointer w-10 h-10 bg-black/30 hover:bg-black/50 text-white rounded-full flex items-center justify-center backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 md:flex">
-            <ChevronLeft className="w-6 h-6 ltr:rotate-180" />
+          <button className="swiper-button-prev-custom absolute right-6 top-1/2 -translate-y-1/2 z-10 cursor-pointer w-10 h-10 bg-black/30 hover:bg-black/50 text-white rounded-full flex items-center justify-center backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 md:flex">
+            <ChevronRight className="w-6 h-6" />
           </button>
 
-          <button className="swiper-button-next-custom absolute right-6 top-1/2 -translate-y-1/2 z-10 cursor-pointer w-10 h-10 bg-black/30 hover:bg-black/50 text-white rounded-full flex items-center justify-center backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 md:flex">
-            <ChevronRight className="w-6 h-6 ltr:rotate-180" />
+          <button className="swiper-button-next-custom absolute left-6 top-1/2 -translate-y-1/2 z-10 cursor-pointer w-10 h-10 bg-black/30 hover:bg-black/50 text-white rounded-full flex items-center justify-center backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 md:flex">
+            <ChevronLeft className="w-6 h-6" />
           </button>
 
           <div className="custom-pagination absolute bottom-32! justify-center z-10 flex gap-2"></div>
