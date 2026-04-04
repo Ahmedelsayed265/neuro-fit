@@ -46,7 +46,10 @@ export default function Articles() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           <div className="lg:col-span-5">
-            <div className="bg-white rounded-2xl shadow-[0px_8px_7.5px_0px_#E5DBA34D] overflow-hidden h-full flex flex-col p-4">
+            <Link
+              href="/articles/1"
+              className="bg-white rounded-2xl shadow-[0px_8px_7.5px_0px_#E5DBA34D] overflow-hidden h-full flex flex-col p-4"
+            >
               <div className="relative w-full h-[448px] rounded-[8px_8px_100px_100px] overflow-hidden mb-6">
                 <Image
                   src="/images/d2.png"
@@ -70,13 +73,14 @@ export default function Articles() {
                   {t("featured.desc")}
                 </p>
               </div>
-            </div>
+            </Link>
           </div>
 
           <div className="lg:col-span-7 flex flex-col gap-6">
             {sideArticles.map((article) => (
-              <div
+              <Link
                 key={article.id}
+                href={`/articles/${article.id}`}
                 className="bg-white rounded-2xl shadow-[0px_8px_7.5px_0px_#E5DBA34D] overflow-hidden h-full flex gap-6 p-4"
               >
                 <div className="relative w-[280px] h-[160px] shrink-0 rounded-[8px_8px_100px_100px] overflow-hidden sm:order-1">
@@ -102,7 +106,7 @@ export default function Articles() {
                     {article.desc}
                   </p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

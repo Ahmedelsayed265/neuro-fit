@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 export default function Services() {
   const t = useTranslations("services");
@@ -60,7 +61,10 @@ export default function Services() {
           <div className="lg:col-span-7 relative">
             <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 gap-6 h-full">
               {servicesList.map((service) => (
-                <div className="bg-white p-6 rounded-2xl border border-[#EAEAEA] flex flex-col gap-5">
+                <Link
+                  href={`/services/${service.id}`}
+                  className="bg-white p-6 rounded-2xl border border-[#EAEAEA] flex flex-col gap-5"
+                >
                   <Image
                     src={service.icon}
                     alt={service.title}
@@ -75,7 +79,7 @@ export default function Services() {
                   <p className="text-[#606060] text-base">
                     {service.description}
                   </p>
-                </div>
+                </Link>
               ))}
             </div>
           </div>

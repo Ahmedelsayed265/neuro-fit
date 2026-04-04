@@ -12,6 +12,7 @@
   --font-mono: var(--font-geist-mono);
 }
 
+
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -27,6 +28,10 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: #b89a44;
+}
+
+section[id] {
+  scroll-margin-top: 100px;
 }
 
 body {
