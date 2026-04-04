@@ -17,8 +17,10 @@ const notoKufiArabic = Noto_Kufi_Arabic({
   variable: "--font-noto-kufi-arabic",
 });
 
+const SITE_URL = process.env.SITE_URL || "http://localhost:3000";
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.SITE_URL || ""),
+  metadataBase: new URL(SITE_URL),
 
   title: {
     default: "Neuro Fit",
@@ -32,7 +34,7 @@ export const metadata: Metadata = {
   authors: [
     {
       name: "Neuro Fit",
-      url: process.env.SITE_URL || "",
+      url: SITE_URL,
     },
   ],
 
@@ -45,13 +47,13 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: process.env.SITE_URL || "",
+    canonical: SITE_URL,
   },
 
   openGraph: {
     title: "Neuro Fit",
     description: "",
-    url: process.env.SITE_URL || "",
+    url: SITE_URL,
     siteName: "Neuro Fit",
     type: "website",
 
@@ -83,6 +85,10 @@ export const metadata: Metadata = {
     google: "",
   },
 };
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 export default async function RootLayout({
   children,

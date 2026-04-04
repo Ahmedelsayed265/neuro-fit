@@ -2,7 +2,13 @@ import { Link } from "@/i18n/navigation";
 import { ChevronLeft } from "lucide-react";
 import Image from "next/image";
 
-export default function ServicePage() {
+export default async function ServicePage({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}) {
+  const { locale, slug } = await params;
+  
   return (
     <>
       <div
