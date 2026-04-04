@@ -1,0 +1,95 @@
+"use client";
+
+import Image from "next/image";
+import { useTranslations } from "next-intl";
+
+export default function Services() {
+  const t = useTranslations("services");
+
+  const servicesList = [
+    {
+      id: 1,
+      title: t("item1.title"),
+      description: t("item1.description"),
+      icon: "/images/nervous system.svg",
+    },
+    {
+      id: 2,
+      title: t("item2.title"),
+      description: t("item2.description"),
+      icon: "/images/hroom.svg",
+    },
+    {
+      id: 3,
+      title: t("item3.title"),
+      description: t("item3.description"),
+      icon: "/images/exercise.svg",
+    },
+    {
+      id: 4,
+      title: t("item4.title"),
+      description: t("item4.description"),
+      icon: "/images/rehabilitation.svg",
+    },
+  ];
+
+  return (
+    <section className="relative w-full py-12 overflow-hidden" id="services">
+      <div
+        className="absolute inset-0 opacity-20 pointer-events-none"
+        style={{
+          backgroundImage: "url('/images/ser_bg.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      />
+
+      <div className="container relative z-10 mx-auto px-4 md:px-8 max-w-7xl">
+        <div className="flex flex-col items-center mb-16 text-center">
+          <div className="inline-block px-8 py-2.5 mb-6 text-[#5D3F26] font-bold bg-[#E5DBA3] rounded-full text-base">
+            {t("badge")}
+          </div>
+
+          <h2 className="text-4xl md:text-5xl font-bold text-[#1A1A1A] leading-tight max-w-2xl">
+            {t("title")}
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          <div className="lg:col-span-7 relative">
+            <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 gap-6 h-full">
+              {servicesList.map((service) => (
+                <div className="bg-white p-6 rounded-2xl border border-[#EAEAEA] flex flex-col gap-5">
+                  <Image
+                    src={service.icon}
+                    alt={service.title}
+                    width={40}
+                    height={40}
+                  />
+
+                  <h3 className="text-xl font-semibold text-[#170E08]">
+                    {service.title}
+                  </h3>
+
+                  <p className="text-[#606060] text-base">
+                    {service.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="lg:col-span-5 relative min-h-[400px] lg:min-h-full rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.08)]">
+            <Image
+              src="/images/services.png"
+              alt={t("title")}
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

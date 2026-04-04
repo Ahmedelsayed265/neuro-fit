@@ -1,0 +1,118 @@
+{
+  "home": "Home",
+  "medical team": "Medical Team",
+  "about us": "About Us",
+  "services": {
+    "badge": "Services & Treatment Systems",
+    "title": "Specialized Treatment Services and Systems",
+    "item1": {
+      "title": "Neurological Rehabilitation",
+      "description": "Have you ever wondered how someone regains the ability to speak and move after a severe injury..."
+    },
+    "item2": {
+      "title": "Inpatient Physical Therapy",
+      "description": "Receiving physical therapy sessions in centers that provide you with hotel accommodation will benefit you and help you..."
+    },
+    "item3": {
+      "title": "Hydrotherapy",
+      "description": "Hydrotherapy is a form of physical therapy, in which water is used to promote healing and improve health..."
+    },
+    "item4": {
+      "title": "Exercises for Chronic Diseases",
+      "description": "Receiving physical therapy sessions in centers that provide you with hotel accommodation will benefit you and help you..."
+    }
+  },
+  "contact us": "Contact Us",
+  "hero": {
+    "title": "Natural pain-free life starts with us at NeuroFit",
+    "cta_contact": "Contact Us",
+    "cta_about": "Know More About Us",
+    "feature_1": "Comfortable and supportive environment with integrated natural",
+    "feature_2": "Latest technologies and treatment systems",
+    "feature_3": "Highly experienced medical team"
+  },
+  "team": {
+    "badge": "Medical Team",
+    "title": "Specialized Consultants and Doctors",
+    "doctor1": {
+      "name": "Dr. Omar Khaled Mahmoud",
+      "specialty": "Women's Health",
+      "experience": "12 Years Experience"
+    },
+    "doctor2": {
+      "name": "Dr. Ashraf Zaki",
+      "specialty": "Nutrition Consultant",
+      "experience": "15 Years Experience"
+    },
+    "doctor3": {
+      "name": "Dr. Osama Abdullah Al-Khouli",
+      "specialty": "Pediatric Rehabilitation Consultant",
+      "experience": "12 Years Experience"
+    },
+    "doctor4": {
+      "name": "Dr. Omar Khaled Mahmoud",
+      "specialty": "Sports Injuries",
+      "experience": "12 Years Experience"
+    }
+  },
+  "footer": {
+    "address_label": "Address",
+    "address": "6th of October - Central Axis - Next to Al Saraya Hotel and La Cité Plaza Mall - 3 Solimar Buildings behind Al Hosary Square",
+    "quick_contact": "Quick Contact",
+    "phone_label": "Phone",
+    "mobile_label": "Mobile",
+    "email_label": "Email",
+    "quick_links": "Quick Links",
+    "description": "A specialized center for comprehensive physical therapy and rehabilitation. We provide integrated and customized treatment programs to improve quality of life and reduce pain, using the latest technologies and working according to the highest health care standards."
+  },
+  "about": {
+    "badge": "Who We Are",
+    "title": "Our Vision, Mission, and Values",
+    "vision_title": "Our Vision",
+    "vision_desc": "To be a leading center in the field of physical therapy and rehabilitation, by providing integrated treatment services with high professional standards, and contributing to improving the quality of life for our patients and helping them regain their activity and independence.",
+    "mission_title": "Our Mission",
+    "mission_desc": "We strive to provide specialized physical therapy care based on modern scientific foundations, through a qualified team that puts the patient's needs first, we are committed to providing customized treatment plans, and a safe and supportive environment, with a commitment to transparency and continuous development to ensure the best treatment results.",
+    "values_title": "Our Values",
+    "values_desc": "We believe that the patient is at the heart of everything we do, we are committed to providing professional care based on modern scientific foundations, through a qualified team that develops a customized treatment plan for each case that ensures the best possible results.",
+    "experience_years": "+20",
+    "experience_label": "Years Experience"
+  },
+  "articles": {
+    "badge": "Articles",
+    "title": "Latest Published Articles",
+    "view_all": "View All",
+    "item1": {
+      "date": "March 28, 2026",
+      "title": "Speech Therapy Sessions",
+      "desc": "Parents wait eagerly for their child's first words to hear their affectionate tone. Initially, the child learns speech then their ability improves..."
+    },
+    "item2": {
+      "date": "March 28, 2026",
+      "title": "Pelvic Muscle Rehabilitation",
+      "desc": "Some people suffer from recurrent urination problems or leakage, causing constant annoyance and tension. They may think the only solution is..."
+    },
+    "item3": {
+      "date": "March 28, 2026",
+      "title": "Neurological Rehabilitation",
+      "desc": "Have you ever wondered how someone regains the ability to speak and move after a severe brain or spinal cord injury? It's thanks to neurological..."
+    },
+    "featured": {
+      "date": "March 30, 2026",
+      "title": "Integrated Medical Gym",
+      "desc": "The medical gym is an important transitional phase before strength exercises and returning to natural levels, especially after sports injuries..."
+    }
+  },
+  "contact": {
+    "badge": "Contact Us",
+    "title": "We Are Here To Help You",
+    "name": "Name",
+    "name_placeholder": "Enter your name here",
+    "mobile": "Mobile Number",
+    "mobile_placeholder": "+20",
+    "email": "Email (Optional)",
+    "email_placeholder": "Enter your email",
+    "message": "Message",
+    "message_placeholder": "Write your message or inquiry here",
+    "send": "Send Message"
+  }
+}
