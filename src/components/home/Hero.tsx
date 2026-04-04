@@ -71,8 +71,8 @@ export default function Hero() {
                 <path d="M763.921 33.7606C777.555 53.0131 799.198 96.1032 809 99H0C27.7364 93.3178 35.4224 48.4674 57.4778 24.0675C75.1222 4.54766 95.7964 -0.109478 103.928 0.00193656H708.448C719.475 0.670425 746.878 9.69502 763.921 33.7606Z" fill="#fbfbf9"/>
               </svg>
               
-              <div className="relative z-10 w-full px-8 py-4 flex flex-col items-center gap-4">
-                <div className="flex items-center gap-2 text-center">
+              <div className="relative z-10 w-full px-10 py-4 flex flex-col items-center gap-4">
+                <div className="flex items-center gap-2 text-center justify-center">
                   <Image src="/images/heart.svg" alt="Heart" className="w-5 h-5" width={24} height={24} />
                   <p className="text-[#5D3F26] font-semibold md:text-sm text-xs text-start">
                     {t("feature_1")}
