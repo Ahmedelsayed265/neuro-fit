@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Calendar, ChevronLeft } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 
 export default async function ArticlePage({
   params,
@@ -8,6 +9,7 @@ export default async function ArticlePage({
   params: Promise<{ locale: string; slug: string }>;
 }) {
   const { locale, slug } = await params;
+  const t = await getTranslations("articles");
   const isRTL = locale === "ar";
 
   const article = {
@@ -69,28 +71,28 @@ export default async function ArticlePage({
         }}
       >
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <nav className="flex items-center justify-center gap-3 text-base">
+          <nav className="flex items-center justify-center gap-2 md:gap-3 text-[13px] md:text-base">
             <Link
               href="/"
-              className="text-white/70 hover:text-white transition-colors"
+              className="text-white/70 hover:text-white transition-colors shrink-0"
             >
-              {isRTL ? "الرئيسية" : "Home"}
+              {t("home")}
             </Link>
             <ChevronLeft
-              size={16}
-              className="text-white/50 rtl:rotate-0 ltr:rotate-180"
+              size={14}
+              className="text-white/40 rtl:rotate-0 ltr:rotate-180 shrink-0"
             />
             <Link
               href="/articles"
-              className="text-white/70 hover:text-white transition-colors"
+              className="text-white/70 hover:text-white transition-colors shrink-0"
             >
-              {isRTL ? "المقالات" : "Articles"}
+              {t("badge")}
             </Link>
             <ChevronLeft
-              size={16}
-              className="text-white/50 rtl:rotate-0 ltr:rotate-180"
+              size={14}
+              className="text-white/40 rtl:rotate-0 ltr:rotate-180 shrink-0"
             />
-            <span className="text-white font-bold line-clamp-1 max-w-[300px]">
+            <span className="text-white font-bold line-clamp-1 opacity-90">
               {article.title}
             </span>
           </nav>
@@ -105,7 +107,7 @@ export default async function ArticlePage({
               <span>{article.date}</span>
             </div>
 
-            <h1 className="text-3xl md:text-2xl font-bold text-[#1A1A1A] mb-8">
+            <h1 className="text-xl md:text-2xl font-bold text-[#1A1A1A] mb-8">
               {article.title}
             </h1>
 
@@ -128,7 +130,7 @@ export default async function ArticlePage({
           <aside className="lg:col-span-4">
             <div className="sticky top-28">
               <h2 className="text-2xl font-bold text-[#1A1A1A] mb-8 text-right relative inline-block pb-2 border-b-2 border-[#CDB255]">
-                {isRTL ? "مقالات ذات صلة" : "Related Articles"}
+                {t("related_articles")}
               </h2>
 
               <div className="flex flex-col gap-6">

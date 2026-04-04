@@ -78,6 +78,7 @@
     "experience_label": "Years Experience"
   },
   "articles": {
+    "home": "Home",
     "badge": "Articles",
     "title": "Latest Published Articles",
     "view_all": "View All",

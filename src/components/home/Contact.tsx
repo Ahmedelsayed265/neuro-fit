@@ -14,10 +14,10 @@ export default function Contact() {
     <section className="w-full py-12 bg-white" id="contact-us">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="flex flex-col items-center mb-16 text-center">
-          <div className="inline-block px-8 py-2.5 mb-6 text-[#5D3F26] font-bold bg-[#E5DBA3] rounded-full text-base">
+          <span className="bg-[#CDB25533] text-[#5D3F26] px-6 py-2 rounded-full font-semibold text-sm mb-6">
             {t("badge")}
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1A1A1A] leading-tight">
+          </span>
+          <h2 className="text-2xl md:text-5xl font-semibold text-[#1A1A1A] leading-tight">
             {t("title")}
           </h2>
         </div>
@@ -32,15 +32,15 @@ export default function Contact() {
             />
           </div>
 
-          <div className="lg:w-1/2 p-8 md:p-12">
+          <div className="lg:w-1/2 p-4 md:p-8">
             <form
               className="flex flex-col gap-6"
               onSubmit={(e) => e.preventDefault()}
             >
               <div className="flex flex-col gap-2">
-                <label className="flex items-center gap-2 text-[#1A1A1A] font-bold">
+                <label className="flex items-center gap-2 text-[#1A1A1A] font-semibold text-sm md:text-base">
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                    <g clip-path="url(#clip0_682_55069)">
+                    <g clipPath="url(#clip0_682_55069)">
                       <path
                         d="M9.85748 9.63406C11.181 9.63406 12.3271 9.15936 13.2635 8.22278C14.2 7.28635 14.6747 6.14057 14.6747 4.81688C14.6747 3.49364 14.2 2.34771 13.2634 1.41097C12.3268 0.474699 11.1809 0 9.85748 0C8.53378 0 7.388 0.474699 6.45157 1.41113C5.51514 2.34756 5.04028 3.49349 5.04028 4.81688C5.04028 6.14057 5.51514 7.2865 6.45172 8.22293C7.38831 9.1592 8.53424 9.63406 9.85748 9.63406Z"
                         fill="#CDB255"
@@ -68,7 +68,7 @@ export default function Contact() {
               </div>
 
               <div className="flex flex-col gap-2">
-                <label className="flex items-center gap-2 text-[#1A1A1A] font-bold">
+                <label className="flex items-center gap-2 text-[#1A1A1A] font-semibold text-sm md:text-base">
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                     <g clip-path="url(#clip0_682_54922)">
                       <path
@@ -105,7 +105,7 @@ export default function Contact() {
               </div>
 
               <div className="flex flex-col gap-2">
-                <label className="flex items-center gap-2 text-[#1A1A1A] font-bold">
+                <label className="flex items-center gap-2 text-[#1A1A1A] font-semibold text-sm md:text-base">
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                     <path
                       d="M11.6714 12.2535C11.1739 12.5852 10.5959 12.7606 10 12.7606C9.40414 12.7606 8.82617 12.5852 8.3286 12.2535L0.133165 6.78971C0.087923 6.75946 0.0435183 6.72797 9.68791e-07 6.69529V15.6483C9.68791e-07 16.6748 0.833009 17.4894 1.84113 17.4894H18.1588C19.1853 17.4894 20 16.6564 20 15.6483V6.69525C19.9564 6.72802 19.9119 6.75957 19.8665 6.78986L11.6714 12.2535Z"
@@ -126,7 +126,7 @@ export default function Contact() {
               </div>
 
               <div className="flex flex-col gap-2">
-                <label className="flex items-center gap-2 text-[#1A1A1A] font-bold">
+                <label className="flex items-center gap-2 text-[#1A1A1A] font-semibold text-sm md:text-base">
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                     <path
                       d="M18.2422 1.79688H1.75781C0.788555 1.79688 0 2.58547 0 3.55469V12.9297C0 13.8989 0.788594 14.6875 1.75781 14.6875H3.55469V17.6172C3.55469 18.1016 4.10875 18.3736 4.49219 18.0859L9.02344 14.6875H18.2422C19.2114 14.6875 20 13.8989 20 12.9297V3.55469C20 2.58543 19.2114 1.79688 18.2422 1.79688ZM7.65625 11.1719H4.14062C3.81699 11.1719 3.55469 10.9096 3.55469 10.5859C3.55469 10.2623 3.81699 10 4.14062 10H7.65625C7.97988 10 8.24219 10.2623 8.24219 10.5859C8.24219 10.9096 7.97988 11.1719 7.65625 11.1719ZM4.14062 8.82812C3.81699 8.82812 3.55469 8.56582 3.55469 8.24219C3.55469 7.91855 3.81699 7.65625 4.14062 7.65625H11.1719C11.4955 7.65625 11.7578 7.91855 11.7578 8.24219C11.7578 8.56582 11.4955 8.82812 11.1719 8.82812H4.14062ZM15.8594 11.1719H10C9.67637 11.1719 9.41406 10.9096 9.41406 10.5859C9.41406 10.2623 9.67637 10 10 10H15.8594C16.183 10 16.4453 10.2623 16.4453 10.5859C16.4453 10.9096 16.183 11.1719 15.8594 11.1719ZM15.8594 8.82812H13.5156C13.192 8.82812 12.9297 8.56582 12.9297 8.24219C12.9297 7.91855 13.192 7.65625 13.5156 7.65625H15.8594C16.183 7.65625 16.4453 7.91855 16.4453 8.24219C16.4453 8.56582 16.183 8.82812 15.8594 8.82812ZM15.8594 6.48437H4.14062C3.81699 6.48437 3.55469 6.22207 3.55469 5.89844C3.55469 5.5748 3.81699 5.3125 4.14062 5.3125H15.8594C16.183 5.3125 16.4453 5.5748 16.4453 5.89844C16.4453 6.22207 16.183 6.48437 15.8594 6.48437Z"
@@ -143,7 +143,7 @@ export default function Contact() {
                 />
               </div>
 
-              <button className="text-[#000000] cursor-pointer bg-[#CDB255] border-[3px] border-b-[6px] min-w-52 h-14 p-2 flex items-center justify-center rounded-xl font-bold text-base border-[#000000] shadow-[0px_5px_14.3px_2px_#9E852ECC]">
+              <button className="text-[#000000] cursor-pointer bg-[#CDB255] border-[3px] border-b-[6px] min-w-52 h-14 p-2 flex items-center justify-center rounded-xl font-semibold text-base border-[#000000] shadow-[0px_5px_14.3px_2px_#9E852ECC]">
                 {t("send")}
               </button>
             </form>

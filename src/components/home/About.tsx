@@ -12,7 +12,6 @@ export default function About() {
         <div className="flex flex-col lg:flex-row items-center gap-16">
           <div className="w-full lg:w-1/2 relative">
             <div className="relative w-full aspect-562/535">
-              {/* Main Image Container */}
               <div className="absolute top-0 right-0 w-[70%] h-full rounded-2xl overflow-hidden transform group-hover:-translate-y-2 transition-transform duration-500">
                 <Image
                   src="/images/about1.jpg"
@@ -22,7 +21,7 @@ export default function About() {
                 />
               </div>
 
-              <div className="absolute bottom-[50px] left-0 w-[58%] h-[40%] rounded-2xl overflow-hidden border-12 border-[#FBFBF9] z-20 transform group-hover:translate-x-2 transition-transform duration-500 delay-75">
+              <div className="absolute md:bottom-[50px] bottom-[20px] left-0 w-[58%] h-[40%] rounded-2xl overflow-hidden border-12 border-[#FBFBF9] z-20 transform group-hover:translate-x-2 transition-transform duration-500 delay-75">
                 <Image
                   src="/images/about2.jpg"
                   alt="Secondary Treatment Session"
@@ -31,19 +30,19 @@ export default function About() {
                 />
               </div>
 
-              {/* Experience Card */}
-              <div className="absolute top-10 -left-10 lg:left-10 bg-[#F9F8ED] p-6 rounded-2xl flex flex-col items-center gap-3 z-30 min-w-[256px] transform group-hover:scale-105 transition-transform duration-500">
+              <div className="absolute md:top-10 top-4 left-10 bg-[#F9F8ED] p-3 md:p-6 rounded-2xl flex flex-col items-center gap-3 z-30 md:min-w-[256px] min-w-[160px] transform group-hover:scale-105 transition-transform duration-500">
                 <div className="bg-[#CDB255] p-3 rounded-full shadow-[-4.61px_6.91px_0px_0px_#805A28]">
                   <Image
                     src="/images/cirtificate.svg"
                     alt="Certificate"
-                    width={48}
-                    height={48}
+                    width={42}
+                    height={42}
                     className="object-contain text-[#CDB255]"
                   />
+
                 </div>
                 <div className="text-center">
-                  <p className="text-3xl font-bold text-[#2F2013]">
+                  <p className="text-xl md:text-3xl font-bold text-[#2F2013]">
                     {t("experience_years")}
                   </p>
                   <p className="text-sm font-medium text-[#2F2013]/70 uppercase tracking-wider">
@@ -59,7 +58,7 @@ export default function About() {
               {t("badge")}
             </span>
 
-            <h2 className="text-4xl md:text-5xl font-bold text-[#2F2013] mb-12 leading-tight">
+            <h2 className="text-2xl md:text-5xl font-bold text-[#2F2013] mb-12 leading-tight">
               {t("title")}
             </h2>
 
@@ -79,7 +78,7 @@ export default function About() {
                     {t("vision_title")}
                   </h3>
                 </div>
-                <p className="text-[#2F2013]/70 text-sm leading-relaxed">
+                <p className="text-[#2F2013]/70 text-sm leading-relaxed md:text-center text-start">
                   {t("vision_desc")}
                 </p>
               </div>
@@ -99,7 +98,7 @@ export default function About() {
                     {t("mission_title")}
                   </h3>
                 </div>
-                <p className="text-[#2F2013]/70 text-sm leading-relaxed">
+                <p className="text-[#2F2013]/70 text-sm leading-relaxed md:text-center text-start">
                   {t("mission_desc")}
                 </p>
               </div>
@@ -120,7 +119,7 @@ export default function About() {
                   {t("values_title")}
                 </h3>
               </div>
-              <p className="text-[#2F2013]/70 text-sm leading-relaxed">
+              <p className="text-[#2F2013]/70 text-sm leading-relaxed md:text-center text-start">
                 {t("values_desc")}
               </p>
             </div>

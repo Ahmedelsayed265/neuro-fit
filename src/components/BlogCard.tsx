@@ -43,11 +43,11 @@ export default function BlogCard({
           <span className="font-medium text-[#8E8E8E]">{date}</span>
         </div>
 
-        <h3 className="text-xl font-bold mb-3 text-[#1A1A1A] group-hover:text-[#8B734B] transition-colors line-clamp-1">
+        <h3 className="text-base md:text-xl font-bold mb-3 text-[#1A1A1A] group-hover:text-[#8B734B] transition-colors line-clamp-1">
           {title}
         </h3>
 
-        <p className="text-[#606060] leading-relaxed line-clamp-3 mb-4">
+        <p className="text-[#606060] leading-relaxed line-clamp-3 mb-4 text-sm md:text-base">
           {description}
         </p>
       </div>

@@ -22,13 +22,13 @@ export default function ServicePage() {
                 width={48}
                 height={48}
               />
-              <h1 className="text-white font-bold text-3xl">إعادة التأهيل العصبي</h1>
+              <h1 className="text-white font-bold md:text-3xl text-xl">إعادة التأهيل العصبي</h1>
             </div>
 
             <div className="flex items-center gap-2">
               <Link
                 href="/"
-                className="text-white/70 hover:text-white transition-colors"
+                className="text-white/70 hover:text-white transition-colors text-sm md:text-base"
               >
                 الرئيسية
               </Link>
@@ -36,7 +36,7 @@ export default function ServicePage() {
                 size={16}
                 className="text-white/50 rtl:rotate-0 ltr:rotate-180"
               />
-              <span className="text-white font-bold line-clamp-1 max-w-[300px]">
+              <span className="text-white font-bold line-clamp-1 max-w-[300px] text-sm md:text-base">
                 إعادة التأهيل العصبي
               </span>
             </div>
@@ -55,14 +55,15 @@ export default function ServicePage() {
           />
         </div>
 
-        {/* Section 1 */}
-        <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">
+        <h2 className="md:text-2xl text-xl font-bold text-[#1A1A1A] mb-4">
           ما الأمراض التي يستهدفها إعادة التأهيل العصبي؟
         </h2>
-        <p className="text-[#606060] text-lg mb-6 leading-relaxed">
+
+        <p className="text-[#606060] md:text-lg text-sm mb-6 leading-relaxed">
           يستهدف إعادة التأهيل العصبي طيفاً واسعاً من أمراض وحالات الجهاز العصبي المسببة لعديد من المضاعفات التي تؤثر في وظائف الجسم الحيوية، تتضمن ما يلي:
         </p>
-        <ul className="text-[#606060] text-lg space-y-2 mb-10 mr-6">
+
+        <ul className="text-[#606060] md:text-lg text-sm space-y-2 mb-10 mr-6">
           <li>السكتة الدماغية.</li>
           <li>نزف المخ.</li>
           <li>شلل الأطفال.</li>
@@ -81,13 +82,13 @@ export default function ServicePage() {
         </ul>
 
         {/* Section 2 */}
-        <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">
+        <h2 className="md:text-2xl text-xl font-bold text-[#1A1A1A] mb-4">
           علام يشتمل برنامج إعادة التأهيل العصبي؟
         </h2>
-        <p className="text-[#606060] text-lg mb-6 leading-relaxed">
+        <p className="text-[#606060] md:text-lg text-sm mb-6 leading-relaxed">
           يخضع المريض لعدة فحوصات لتقييم حالته، مثل التخطيط الكهربي للعضلات وتخطيط كهرية المخ (رسم المخ) لتحديد برنامج إعادة التأهيل العصبي المناسب لحالته. وعامة، يضم البرنامج عدداً من العلاجات أبرزها:
         </p>
-        <div className="text-[#606060] text-lg space-y-6 mb-10">
+        <div className="text-[#606060] md:text-lg text-sm space-y-6 mb-10">
           <p>
             <strong className="text-[#1A1A1A]">العلاج الطبيعي:</strong> يهدف إلى تقوية العضلات وزيادة مرونتها لتعزيز قدرة المريض على المشي والوقوف بمفرده في أفضل مراكز علاج طبيعي في مصر.
           </p>
@@ -106,21 +107,21 @@ export default function ServicePage() {
         </div>
 
         {/* Section 3 */}
-        <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">
+        <h2 className="md:text- 2xl text-xl font-bold text-[#1A1A1A] mb-4">
           كم تستغرق مدة برنامج إعادة التأهيل العصبي؟
         </h2>
-        <p className="text-[#606060] text-lg mb-6 leading-relaxed">
+        <p className="text-[#606060] md:text-lg text-sm mb-6 leading-relaxed">
           تختلف مدة البرنامج من حالة لأخرى، وتعتمد على عدة عوامل منها حدة الإصابة، عمر المريض، ومدى استجابته للعلاج. نحن في نيوروفيت نصمم برامج زمنية مخصصة تضمن الوصول لأفضل النتائج في أقصر وقت ممكن.
         </p>
 
         {/* Section 4 */}
-        <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">
+        <h2 className="md:text-2xl text-xl font-bold text-[#1A1A1A] mb-4">
           مركز نيوروفيت.. أفضل مركز لإعادة التأهيل العصبي في مصر.
         </h2>
-        <p className="text-[#606060] text-lg mb-4 leading-relaxed">
+        <p className="text-[#606060] md:text-lg text-sm mb-4 leading-relaxed">
           مركز نيوروفيت من أفضل المراكز المتخصصة في إعادة التأهيل العصبي بمصر، وذلك بفضل خبرة وكفاءة طاقمه الطبي، وعلى رأسهم الدكتور أحمد ياسين.
         </p>
-        <p className="text-[#606060] text-lg leading-relaxed">
+        <p className="text-[#606060] md:text-lg text-sm leading-relaxed">
           تواصل معنا الآن للحصول على استشارة متخصصة وبدء رحلة التغيير. يمكنك الاتصال بنا عبر الأرقام الموضحة أدناه، لنتعرف على تجارب مرضانا السابقة ومدى رضاهم عن الخدمات المقدمة، ندعوك لزيارة صفحة "آراء العملاء" في موقعنا الإلكتروني.
         </p>
       </div>

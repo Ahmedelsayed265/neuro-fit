@@ -15,7 +15,7 @@ export default function Hero() {
   const t = useTranslations("hero");
 
   return (
-    <section className="w-full">
+    <section className="w-full px-3 md:px-0">
       <div className="max-w-7xl mx-auto">
         <div className="relative rounded-3xl overflow-hidden group">
           <Swiper
@@ -55,7 +55,7 @@ export default function Hero() {
             <ChevronRight className="w-6 h-6 ltr:rotate-180" />
           </button>
 
-          <div className="custom-pagination absolute bottom-30! left-1/2 -translate-x-1/2 z-10 flex gap-2"></div>
+          <div className="custom-pagination absolute bottom-32! justify-center z-10 flex gap-2"></div>
 
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 w-full max-w-200">
             <div className="relative w-full h-25 flex items-center justify-center">
@@ -74,22 +74,22 @@ export default function Hero() {
               <div className="relative z-10 w-full px-8 py-4 flex flex-col items-center gap-4">
                 <div className="flex items-center gap-2 text-center">
                   <Image src="/images/heart.svg" alt="Heart" className="w-5 h-5" width={24} height={24} />
-                  <p className="text-[#5D3F26] font-bold text-sm">
+                  <p className="text-[#5D3F26] font-semibold md:text-sm text-xs text-start">
                     {t("feature_1")}
                   </p>
                 </div>
                 
-                <div className="flex items-center justify-center gap-12 w-full">
+                <div className="flex items-center justify-center md:gap-12 gap-4 w-full">
                   <div className="flex items-center gap-2">
                     <Image src="/images/lamp.svg" alt="Lightbulb" className="w-5 h-5" width={24} height={24} />
-                    <p className="text-[#5D3F26] font-bold text-sm">
+                    <p className="text-[#5D3F26] font-semibold md:text-sm text-xs">
                       {t("feature_2")}
                     </p>
                   </div>
                   
                   <div className="flex items-center gap-2">
                     <Image src="/images/cir.svg" alt="Graduation cap" className="w-5 h-5" width={24} height={24} />
-                    <p className="text-[#5D3F26] font-bold text-sm">
+                    <p className="text-[#5D3F26] font-semibold md:text-sm text-xs">
                       {t("feature_3")}
                     </p>
                   </div>

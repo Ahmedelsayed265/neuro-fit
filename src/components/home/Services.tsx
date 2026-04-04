@@ -48,18 +48,18 @@ export default function Services() {
 
       <div className="container relative z-10 mx-auto px-4 md:px-8 max-w-7xl">
         <div className="flex flex-col items-center mb-16 text-center">
-          <div className="inline-block px-8 py-2.5 mb-6 text-[#5D3F26] font-bold bg-[#E5DBA3] rounded-full text-base">
+          <span className="bg-[#CDB25533] text-[#5D3F26] px-6 py-2 rounded-full font-bold text-sm mb-6">
             {t("badge")}
-          </div>
+          </span>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1A1A1A] leading-tight max-w-2xl">
+          <h2 className="text-2xl md:text-5xl font-bold text-[#1A1A1A] leading-tight max-w-2xl">
             {t("title")}
           </h2>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           <div className="lg:col-span-7 relative">
-            <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 gap-6 h-full">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 h-full">
               {servicesList.map((service) => (
                 <Link
                   href={`/services/${service.id}`}
@@ -72,11 +72,11 @@ export default function Services() {
                     height={40}
                   />
 
-                  <h3 className="text-xl font-semibold text-[#170E08]">
+                  <h3 className="text-base md:text-xl font-semibold text-[#170E08]">
                     {service.title}
                   </h3>
 
-                  <p className="text-[#606060] text-base">
+                  <p className="text-[#606060] text-sm md:text-base">
                     {service.description}
                   </p>
                 </Link>

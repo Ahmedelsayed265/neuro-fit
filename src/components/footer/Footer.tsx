@@ -12,7 +12,7 @@ export default function Footer() {
       <FooterMap />
       <FooterAddress />
       <div
-        className="bg-[#2F2013] py-16 px-4 -mt-1 relative overflow-hidden"
+        className="bg-[#2F2013] py-16 md:px-0 px-6 -mt-1 relative overflow-hidden"
         style={{
           backgroundImage: "url(/images/footer.png)",
           backgroundSize: "cover",

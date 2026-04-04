@@ -32,7 +32,7 @@ export default function FooterContactInfo() {
 
   return (
     <div className="flex flex-col gap-6">
-      <h3 className="text-2xl font-bold">{t("footer.quick_contact")}</h3>
+      <h3 className="text-xl md:text-2xl font-bold">{t("footer.quick_contact")}</h3>
       <div className="space-y-4">
         {contacts.map((contact, idx) => (
           <div key={idx} className="flex flex-col gap-2">
@@ -44,7 +44,7 @@ export default function FooterContactInfo() {
                 height={24}
                 className="w-6 h-6"
               />
-              <p className="text-[18px] text-white">
+              <p className="text-sm md:text-base text-white">
                 {contact.label}
               </p>
             </div>

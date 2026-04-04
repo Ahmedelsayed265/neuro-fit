@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Logo() {
   return (
-    <div className="flex-1">
+    <div className="shrink-0">
       <Link href="/">
         <Image
           src="/images/logo.svg"

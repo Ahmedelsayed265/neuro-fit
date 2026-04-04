@@ -30,7 +30,7 @@ export default function Nav() {
   ];
 
   return (
-    <nav className="flex-2 flex justify-center items-center gap-6">
+    <nav className="hidden lg:flex justify-center items-center gap-10">
       {navItems.map((item) => (
         <Link key={item.href} href={item.href}>
           <span className="text-[14px] font-bold text-[#606060]">
