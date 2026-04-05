@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import FadeUp from "../FadeUp";
 
 export default function Services() {
   const t = useTranslations("services");
@@ -46,7 +47,7 @@ export default function Services() {
         }}
       />
 
-      <div className="container relative z-10 mx-auto px-4 md:px-8 max-w-7xl">
+      <FadeUp className="container relative z-10 mx-auto px-4 md:px-8 max-w-7xl">
         <div className="flex flex-col items-center mb-16 text-center">
           <span className="bg-[#CDB25533] text-[#5D3F26] px-6 py-2 rounded-full font-bold text-sm mb-6">
             {t("badge")}
@@ -62,6 +63,7 @@ export default function Services() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 h-full">
               {servicesList.map((service) => (
                 <Link
+                  key={service.id}
                   href={`/services/${service.id}`}
                   className="bg-white p-6 rounded-2xl border border-[#EAEAEA] flex flex-col gap-5"
                 >
@@ -90,10 +92,11 @@ export default function Services() {
               alt={t("title")}
               fill
               className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 40vw"
             />
           </div>
         </div>
-      </div>
+      </FadeUp>
     </section>
   );
 }

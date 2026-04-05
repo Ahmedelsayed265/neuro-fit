@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Calendar } from "lucide-react";
 import { Link } from "@/i18n/navigation";
+import FadeUp from "../FadeUp";
 
 export default function Articles() {
   const t = useTranslations("articles");
@@ -34,7 +35,7 @@ export default function Articles() {
 
   return (
     <section className="w-full py-20">
-      <div className="container mx-auto px-4 max-w-7xl">
+      <FadeUp className="container mx-auto px-4 max-w-7xl">
         <div className="flex flex-col items-center mb-16 text-center">
           <span className="bg-[#CDB25533] text-[#5D3F26] px-6 py-2 rounded-full font-bold text-sm mb-6">
             {t("badge")}
@@ -114,12 +115,12 @@ export default function Articles() {
         <div className="flex justify-center mt-16">
           <Link
             href="/articles"
-            className="text-[#5D3F26] bg-white border-[3px] border-b-[6px] min-w-52 h-14 p-2 flex items-center justify-center rounded-xl font-bold text-base border-[#CDB255] shadow-[0px_5px_14.3px_2px_#9E852ECC]"
+            className="text-[#5D3F26] bg-white border-[3px] min-w-52 h-14 p-2 flex items-center justify-center rounded-xl font-bold text-base border-[#CDB255] btn-premium-gold"
           >
             {t("view_all")}
           </Link>
         </div>
-      </div>
+      </FadeUp>
     </section>
   );
 }

@@ -10,6 +10,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import HeroSlide from "./HeroSlide";
 import Image from "next/image";
+import FadeUp from "../FadeUp";
 
 export default function Hero() {
   const t = useTranslations("hero");
@@ -22,6 +23,7 @@ export default function Hero() {
             spaceBetween={0}
             centeredSlides={true}
             loop={true}
+            speed={1000}
             autoplay={{
               delay: 5000,
               disableOnInteraction: false,
@@ -59,7 +61,7 @@ export default function Hero() {
           <div className="custom-pagination absolute bottom-32! justify-center z-10 flex gap-2"></div>
 
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 w-full max-w-200">
-            <div className="relative w-full h-25 flex items-center justify-center">
+            <FadeUp className="relative w-full h-25 flex items-center justify-center" delay={0.4}>
               <svg 
                 width="809" 
                 height="140" 
@@ -96,7 +98,7 @@ export default function Hero() {
                   </div>
                 </div>
               </div>
-            </div>
+            </FadeUp>
           </div>
         </div>
       </div>

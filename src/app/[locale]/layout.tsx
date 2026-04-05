@@ -10,6 +10,7 @@ import { routing } from "@/i18n/routing";
 import "./globals.css";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
+import FloatingActions from "@/components/FloatingActions";
 
 const notoKufiArabic = Noto_Kufi_Arabic({
   subsets: ["arabic"],
@@ -139,6 +140,7 @@ export default async function RootLayout({
           <Header locale={locale} />
           <main>{children}</main>
           <Footer />
+          <FloatingActions />
         </NextIntlClientProvider>
       </body>
     </html>

@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import FadeUp from "../FadeUp";
 
 export default function Contact() {
   const t = useTranslations("contact");
@@ -12,7 +13,7 @@ export default function Contact() {
 
   return (
     <section className="w-full py-12 bg-white" id="contact-us">
-      <div className="container mx-auto px-4 max-w-7xl">
+      <FadeUp className="container mx-auto px-4 max-w-7xl">
         <div className="flex flex-col items-center mb-16 text-center">
           <span className="bg-[#CDB25533] text-[#5D3F26] px-6 py-2 rounded-full font-semibold text-sm mb-6">
             {t("badge")}
@@ -29,6 +30,7 @@ export default function Contact() {
               alt="Medical Support"
               fill
               className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
 
@@ -56,7 +58,6 @@ export default function Contact() {
                       </clipPath>
                     </defs>
                   </svg>
-
                   {t("name")}
                   <span className="text-red-500">*</span>
                 </label>
@@ -70,7 +71,7 @@ export default function Contact() {
               <div className="flex flex-col gap-2">
                 <label className="flex items-center gap-2 text-[#1A1A1A] font-semibold text-sm md:text-base">
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                    <g clip-path="url(#clip0_682_54922)">
+                    <g clipPath="url(#clip0_682_54922)">
                       <path
                         d="M17.1084 8.39273C17.1324 5.57298 14.7308 2.98801 11.7548 2.63056C11.6956 2.62354 11.6312 2.61286 11.5629 2.60155C11.4156 2.57714 11.2632 2.55205 11.1095 2.55205C10.4995 2.55205 10.3365 2.9805 10.2936 3.23602C10.2518 3.48447 10.2917 3.69311 10.4117 3.8564C10.6137 4.13106 10.9691 4.17981 11.2546 4.21888C11.3382 4.23044 11.4172 4.24118 11.4833 4.25603C14.1571 4.85348 15.0574 5.7928 15.4974 8.44385C15.5081 8.50863 15.513 8.58845 15.5181 8.67311C15.5373 8.99 15.5773 9.64932 16.2861 9.64932C16.3451 9.64932 16.4086 9.64422 16.4746 9.63416C17.1347 9.53385 17.114 8.93118 17.1041 8.64162C17.1013 8.56006 17.0986 8.48292 17.1055 8.43161C17.1074 8.4187 17.1083 8.40571 17.1084 8.39273Z"
                         fill="#CDB255"
@@ -86,12 +87,11 @@ export default function Contact() {
                       </clipPath>
                     </defs>
                   </svg>
-
                   {t("mobile")}
                   <span className="text-red-500">*</span>
                 </label>
 
-                <div className="phone-input-wrapper  relative w-full h-14 bg-white border border-[#EAEAEA] rounded-xl focus-within:border-[#CDB255] transition-colors">
+                <div className="phone-input-wrapper relative w-full h-14 bg-white border border-[#EAEAEA] rounded-xl focus-within:border-[#CDB255] transition-colors">
                   <PhoneInput
                     country={"eg"}
                     value={phoneNumber}
@@ -130,26 +130,26 @@ export default function Contact() {
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                     <path
                       d="M18.2422 1.79688H1.75781C0.788555 1.79688 0 2.58547 0 3.55469V12.9297C0 13.8989 0.788594 14.6875 1.75781 14.6875H3.55469V17.6172C3.55469 18.1016 4.10875 18.3736 4.49219 18.0859L9.02344 14.6875H18.2422C19.2114 14.6875 20 13.8989 20 12.9297V3.55469C20 2.58543 19.2114 1.79688 18.2422 1.79688ZM7.65625 11.1719H4.14062C3.81699 11.1719 3.55469 10.9096 3.55469 10.5859C3.55469 10.2623 3.81699 10 4.14062 10H7.65625C7.97988 10 8.24219 10.2623 8.24219 10.5859C8.24219 10.9096 7.97988 11.1719 7.65625 11.1719ZM4.14062 8.82812C3.81699 8.82812 3.55469 8.56582 3.55469 8.24219C3.55469 7.91855 3.81699 7.65625 4.14062 7.65625H11.1719C11.4955 7.65625 11.7578 7.91855 11.7578 8.24219C11.7578 8.56582 11.4955 8.82812 11.1719 8.82812H4.14062ZM15.8594 11.1719H10C9.67637 11.1719 9.41406 10.9096 9.41406 10.5859C9.41406 10.2623 9.67637 10 10 10H15.8594C16.183 10 16.4453 10.2623 16.4453 10.5859C16.4453 10.9096 16.183 11.1719 15.8594 11.1719ZM15.8594 8.82812H13.5156C13.192 8.82812 12.9297 8.56582 12.9297 8.24219C12.9297 7.91855 13.192 7.65625 13.5156 7.65625H15.8594C16.183 7.65625 16.4453 7.91855 16.4453 8.24219C16.4453 8.56582 16.183 8.82812 15.8594 8.82812ZM15.8594 6.48437H4.14062C3.81699 6.48437 3.55469 6.22207 3.55469 5.89844C3.55469 5.5748 3.81699 5.3125 4.14062 5.3125H15.8594C16.183 5.3125 16.4453 5.5748 16.4453 5.89844C16.4453 6.22207 16.183 6.48437 15.8594 6.48437Z"
-                      fill="#CDB255"
-                    />
-                  </svg>
-                  {t("message")}
-                  <span className="text-red-500">*</span>
-                </label>
-                <textarea
-                  rows={4}
-                  placeholder={t("message_placeholder")}
-                  className="w-full p-4 rounded-xl bg-white border border-transparent focus:border-[#CDB255] outline-none text-right placeholder:text-gray-300 resize-none"
-                />
-              </div>
+                        fill="#CDB255"
+                      />
+                    </svg>
+                    {t("message")}
+                    <span className="text-red-500">*</span>
+                  </label>
+                  <textarea
+                    rows={4}
+                    placeholder={t("message_placeholder")}
+                    className="w-full p-4 rounded-xl bg-white border border-transparent focus:border-[#CDB255] outline-none text-right placeholder:text-gray-300 resize-none"
+                  />
+                </div>
 
-              <button className="text-[#000000] cursor-pointer bg-[#CDB255] border-[3px] border-b-[6px] min-w-52 h-14 p-2 flex items-center justify-center rounded-xl font-semibold text-base border-[#000000] shadow-[0px_5px_14.3px_2px_#9E852ECC]">
-                {t("send")}
-              </button>
-            </form>
+                <button className="text-[#000000] cursor-pointer bg-[#CDB255] border-[3px] min-w-52 h-14 p-2 flex items-center justify-center rounded-xl font-semibold text-base border-[#000000] btn-premium">
+                  {t("send")}
+                </button>
+              </form>
+            </div>
           </div>
-        </div>
-      </div>
+      </FadeUp>
     </section>
   );
 }

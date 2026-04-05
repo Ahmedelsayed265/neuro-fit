@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Calendar, ChevronLeft } from "lucide-react";
 import { getTranslations } from "next-intl/server";
+import FadeUp from "@/components/FadeUp";
 
 export default async function ArticlePage({
   params,
@@ -70,7 +71,7 @@ export default async function ArticlePage({
           backgroundPosition: "center",
         }}
       >
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <FadeUp className="max-w-7xl mx-auto px-4 md:px-8">
           <nav className="flex items-center justify-center gap-2 md:gap-3 text-[13px] md:text-base">
             <Link
               href="/"
@@ -96,68 +97,75 @@ export default async function ArticlePage({
               {article.title}
             </span>
           </nav>
-        </div>
+        </FadeUp>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <article className="lg:col-span-8">
-            <div className="flex items-center justify-start gap-2 text-[#8E8E8E] text-sm mb-4">
-              <Calendar size={16} />
-              <span>{article.date}</span>
-            </div>
+            <FadeUp>
+              <div className="flex items-center justify-start gap-2 text-[#8E8E8E] text-sm mb-4">
+                <Calendar size={16} />
+                <span>{article.date}</span>
+              </div>
 
-            <h1 className="text-xl md:text-2xl font-bold text-[#1A1A1A] mb-8">
-              {article.title}
-            </h1>
+              <h1 className="text-xl md:text-2xl font-bold text-[#1A1A1A] mb-8">
+                {article.title}
+              </h1>
 
-            <div className="relative w-full aspect-video rounded-3xl overflow-hidden mb-10 shadow-sm">
-              <Image
-                src={article.image}
-                alt={article.title}
-                fill
-                className="object-cover"
-                priority
+              <div className="relative w-full aspect-video rounded-3xl overflow-hidden mb-10 shadow-sm">
+                <Image
+                  src={article.image}
+                  alt={article.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 800px"
+                  priority
+                />
+              </div>
+
+              <div
+                className="prose prose-lg max-w-none text-[#606060] leading-loose text-right"
+                dangerouslySetInnerHTML={{ __html: article.content }}
               />
-            </div>
-
-            <div
-              className="prose prose-lg max-w-none text-[#606060] leading-loose text-right"
-              dangerouslySetInnerHTML={{ __html: article.content }}
-            />
+            </FadeUp>
           </article>
 
           <aside className="lg:col-span-4">
             <div className="sticky top-28">
-              <h2 className="text-2xl font-bold text-[#1A1A1A] mb-8 text-right relative inline-block pb-2 border-b-2 border-[#CDB255]">
-                {t("related_articles")}
-              </h2>
+              <FadeUp>
+                <h2 className="text-2xl font-bold text-[#1A1A1A] mb-8 text-right relative inline-block pb-2 border-b-2 border-[#CDB255]">
+                  {t("related_articles")}
+                </h2>
+              </FadeUp>
 
               <div className="flex flex-col gap-6">
-                {relatedArticles.map((item) => (
-                  <Link
-                    key={item.id}
-                    href={`/articles/${item.slug}`}
-                    className="flex items-center bg-white gap-4 group p-2 rounded-2xl transition-all border border-[#EAEAEA]"
-                  >
-                    <div className="relative w-24 h-24 shrink-0 rounded-xl overflow-hidden">
-                      <Image
-                        src={item.image}
-                        alt={item.title}
-                        fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                    </div>
-                    <div className="grow text-right">
-                      <div className="flex items-centergap-1 text-[#8E8E8E] text-xs mb-2">
-                        <Calendar size={12} />
-                        <span>{item.date}</span>
+                {relatedArticles.map((item, index) => (
+                  <FadeUp key={item.id} delay={index * 0.1}>
+                    <Link
+                      href={`/articles/${item.slug}`}
+                      className="flex items-center bg-white gap-4 group p-2 rounded-2xl transition-all border border-[#EAEAEA]"
+                    >
+                      <div className="relative w-24 h-24 shrink-0 rounded-xl overflow-hidden">
+                        <Image
+                          src={item.image}
+                          alt={item.title}
+                          fill
+                          className="object-cover group-hover:scale-110 transition-transform duration-500"
+                          sizes="96px"
+                        />
                       </div>
-                      <h4 className="text-[#1A1A1A] font-bold text-base line-clamp-2 group-hover:text-[#CDB255] transition-colors leading-snug">
-                        {item.title}
-                      </h4>
-                    </div>
-                  </Link>
+                      <div className="grow text-right">
+                        <div className="flex items-center gap-1 text-[#8E8E8E] text-xs mb-2">
+                          <Calendar size={12} />
+                          <span>{item.date}</span>
+                        </div>
+                        <h4 className="text-[#1A1A1A] font-bold text-base line-clamp-2 group-hover:text-[#CDB255] transition-colors leading-snug">
+                          {item.title}
+                        </h4>
+                      </div>
+                    </Link>
+                  </FadeUp>
                 ))}
               </div>
             </div>

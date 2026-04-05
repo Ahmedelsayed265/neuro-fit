@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import { useLocale } from "next-intl";
+import FadeUp from "../FadeUp";
 
 export default function Care() {
   const locale = useLocale();
@@ -12,7 +15,7 @@ export default function Care() {
 
   return (
     <section className="w-full py-8 md:py-14 overflow-hidden">
-      <div className="md:px-0 px-3">
+      <FadeUp className="md:px-0 px-3">
         <div className="flex flex-row justify-center items-center gap-6 md:gap-20">
           {images.map((src, index) => (
             <div key={index} className="relative flex-1 h-16 md:h-44">
@@ -26,7 +29,8 @@ export default function Care() {
             </div>
           ))}
         </div>
-      </div>
+      </FadeUp>
     </section>
   );
 }
+

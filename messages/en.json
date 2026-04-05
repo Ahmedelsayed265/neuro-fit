@@ -53,7 +53,21 @@
       "name": "Dr. Omar Khaled Mahmoud",
       "specialty": "Sports Injuries",
       "experience": "12 Years Experience"
+    },
+    "doctor5": {
+      "name": "Dr. Ahmed Kamal",
+      "specialty": "Physical Therapy Consultant",
+      "experience": "10 Years Experience"
+    },
+    "doctor6": {
+      "name": "Dr. Mona Ali",
+      "specialty": "Kinesiology Specialist",
+      "experience": "8 Years Experience"
     }
+  },
+  "home_video": {
+    "badge": "Video Subtitle",
+    "title": "Video Title and Description"
   },
   "footer": {
     "address_label": "Address",
@@ -101,7 +115,8 @@
       "date": "March 30, 2026",
       "title": "Integrated Medical Gym",
       "desc": "The medical gym is an important transitional phase before strength exercises and returning to natural levels, especially after sports injuries..."
-    }
+    },
+    "related_articles": "Related Articles"
   },
   "contact": {
     "badge": "Contact Us",

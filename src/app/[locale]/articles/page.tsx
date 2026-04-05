@@ -2,6 +2,7 @@ import BlogCard from "@/components/BlogCard";
 import Link from "next/link";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 import { getTranslations } from "next-intl/server";
+import FadeUp from "@/components/FadeUp";
 
 export default async function ArticlesPage({
   params,
@@ -79,7 +80,7 @@ export default async function ArticlesPage({
           backgroundPosition: "center",
         }}
       >
-        <div className="max-w-7xl mx-auto py-6">
+        <FadeUp className="max-w-7xl mx-auto py-6">
           <nav className="flex items-center justify-center gap-3 text-base text-white/50">
             <Link href="/" className="text-[#FFFFFFB2] transition-colors">
               {isRTL ? "الرئيسية" : "Home"}
@@ -91,18 +92,20 @@ export default async function ArticlesPage({
               {isRTL ? "المقالات" : "Articles"}
             </span>
           </nav>
-        </div>
+        </FadeUp>
       </div>
 
       <div className="py-12 px-3 md:px-0">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {articles.map((article) => (
-              <BlogCard key={article.id} {...article} />
+            {articles.map((article, index) => (
+              <FadeUp key={article.id} delay={index * 0.1}>
+                <BlogCard {...article} />
+              </FadeUp>
             ))}
           </div>
 
-          <div className="mt-16 flex justify-center items-center gap-2">
+          <FadeUp className="mt-16 flex justify-center items-center gap-2">
             <button className="w-10 h-10 flex items-center justify-center border border-[#EAEAEA] rounded-lg hover:border-[#CDB255] hover:text-[#CDB255] transition-all">
               {isRTL ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
             </button>
@@ -125,7 +128,7 @@ export default async function ArticlesPage({
             <button className="w-10 h-10 flex items-center justify-center border border-[#EAEAEA] rounded-lg hover:border-[#CDB255] hover:text-[#CDB255] transition-all">
               {isRTL ? <ChevronLeft size={20} /> : <ChevronRight size={20} />}
             </button>
-          </div>
+          </FadeUp>
         </div>
       </div>
     </section>

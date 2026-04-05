@@ -2,13 +2,14 @@
 
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import FadeUp from "../FadeUp";
 
 export default function About() {
   const t = useTranslations("about");
 
   return (
     <section className="w-full py-12 overflow-hidden relative" id="about-us">
-      <div className="max-w-7xl mx-auto px-4 relative z-10">
+      <FadeUp className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-16">
           <div className="w-full lg:w-1/2 relative">
             <div className="relative w-full aspect-562/535">
@@ -116,7 +117,7 @@ export default function About() {
                   />
                 </div>
                 <h3 className="text-xl font-bold text-[#5D3F26]">
-                  {t("values_title")}
+                    {t("values_title")}
                 </h3>
               </div>
               <p className="text-[#2F2013]/70 text-sm leading-relaxed md:text-center text-start">
@@ -125,7 +126,7 @@ export default function About() {
             </div>
           </div>
         </div>
-      </div>
+      </FadeUp>
     </section>
   );
 }

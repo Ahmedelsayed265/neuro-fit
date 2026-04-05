@@ -1,5 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import FadeUp from "../FadeUp";
 
 export default function Team() {
   const t = useTranslations("team");
@@ -9,11 +16,13 @@ export default function Team() {
     { id: "doctor2", image: "/images/d2.png" },
     { id: "doctor3", image: "/images/d3.png" },
     { id: "doctor4", image: "/images/d4.png" },
+    { id: "doctor5", image: "/images/d2.png" },
+    { id: "doctor6", image: "/images/d3.png" }, 
   ];
 
   return (
     <section className="w-full py-10 px-3 md:px-0" id="medical-team">
-      <div className="max-w-7xl mx-auto">
+      <FadeUp className="max-w-7xl mx-auto">
         <div className="flex flex-col items-center mb-12">
           <span className="bg-[#CDB25533] text-[#5D3F26] px-6 py-2 rounded-full font-bold text-sm mb-6">
             {t("badge")}
@@ -24,39 +33,51 @@ export default function Team() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-6">
+        <Swiper
+          modules={[Pagination, Autoplay]}
+          spaceBetween={16}
+          slidesPerView={2}
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          breakpoints={{
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 24,
+            },
+          }}
+          className="pb-16 team-swiper [&_.swiper-pagination-bullet-active]:bg-[#CDB255]! [&_.swiper-pagination-bullet]:w-3! [&_.swiper-pagination-bullet]:h-3!"
+        >
           {doctors.map((doc) => (
-            <div
-              key={doc.id}
-              className="bg-[#F9F8ED] rounded-2xl overflow-hidden"
-            >
-              <div className="relative w-full aspect-square bg-gray-100">
-                <Image
-                  src={doc.image}
-                  alt={t(`${doc.id}.name`)}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  className="object-cover"
-                />
+            <SwiperSlide key={doc.id}>
+              <div className="bg-[#F9F8ED] rounded-2xl overflow-hidden h-full flex flex-col">
+                <div className="relative w-full aspect-square bg-gray-100">
+                  <Image
+                    src={doc.image}
+                    alt={t(`${doc.id}.name`)}
+                    fill
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    className="object-cover"
+                  />
+                </div>
+
+                <div className="p-4 md:p-6 flex flex-col grow">
+                  <h3 className="md:text-xl text-sm font-bold text-[#000000] mb-2 line-clamp-1">
+                    {t(`${doc.id}.name`)}
+                  </h3>
+
+                  <p className="text-[#606060] font-medium mb-4 line-clamp-1 text-xs md:text-base">
+                    {t(`${doc.id}.specialty`)}
+                  </p>
+
+                  <span className="text-[#9F782F] text-xs font-bold mt-auto">
+                    {t(`${doc.id}.experience`)}
+                  </span>
+                </div>
               </div>
-
-              <div className="p-6 flex flex-col">
-                <h3 className="md:text-xl text-sm font-bold text-[#000000] mb-2 line-clamp-1">
-                  {t(`${doc.id}.name`)}
-                </h3>
-
-                <p className="text-[#606060] font-medium mb-4 line-clamp-1 text-xs md:text-base">
-                  {t(`${doc.id}.specialty`)}
-                </p>
-
-                <span className="text-[#9F782F] text-xs font-bold">
-                  {t(`${doc.id}.experience`)}
-                </span>
-              </div>
-            </div>
+            </SwiperSlide>
           ))}
-        </div>
-      </div>
+        </Swiper>
+      </FadeUp>
     </section>
   );
 }

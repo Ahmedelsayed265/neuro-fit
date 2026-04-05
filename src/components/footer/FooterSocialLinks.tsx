@@ -37,7 +37,7 @@ export default function FooterSocialLinks() {
           key={idx}
           href={link.href}
           aria-label={link.href}
-          className="text-[#000000] bg-[#CDB255] border-[3px] border-b-[6px] min-w-12 h-12 p-2 flex items-center justify-center rounded-xl font-bold text-base border-[#000000] shadow-[0px_5px_14.3px_2px_#9E852ECC] transition-transform hover:scale-110 active:scale-95"
+          className="text-[#000000] bg-[#CDB255] border-[3px] min-w-12 h-12 p-2 flex items-center justify-center rounded-xl font-bold text-base border-black btn-premium"
         >
           {link.icon}
         </a>
