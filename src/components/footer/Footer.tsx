@@ -12,12 +12,11 @@ export default function Footer() {
       <FooterMap />
       <FooterAddress />
       <div
-        className="bg-[#2F2013] py-16 md:px-0 px-6 -mt-1 relative overflow-hidden"
+        className="bg-[#2F2013] py-16 md:px-0 px-6 -mt-1 relative overflow-hidden md:rounded-t-[32px]"
         style={{
           backgroundImage: "url(/images/footer.png)",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          borderRadius: "32px 32px 0 0",
         }}
       >
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-white rtl:text-right ltr:text-left relative z-10">

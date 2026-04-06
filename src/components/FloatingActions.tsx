@@ -145,12 +145,12 @@ export default function FloatingActions() {
   };
 
   return (
-    <div className="fixed left-6 bottom-16 z-50 flex flex-col items-center gap-4">
+    <div className="fixed left-4 md:left-6 bottom-6 md:bottom-16 z-50 flex flex-col items-center gap-2 md:gap-4">
       {/* Social Media Bar */}
       <motion.div
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        className="bg-white p-2 rounded-full shadow-[0px_4px_20px_0px_#0000001A] flex flex-col gap-3 border border-[#F1EDD0]"
+        className="bg-white p-1.5 md:p-2 rounded-full shadow-[0px_4px_20px_0px_#0000001A] flex flex-col gap-2 md:gap-3 border border-[#F1EDD0]"
       >
         {socialLinks.map((social) => (
           <a
@@ -158,7 +158,7 @@ export default function FloatingActions() {
             href={social.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-10 h-10 flex items-center justify-center rounded-full border-2 border-[#CDB255] text-[#5D3F26] hover:bg-[#CDB255] hover:text-white transition-all duration-300"
+            className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full border-2 border-[#CDB255] text-[#5D3F26] hover:bg-[#CDB255] hover:text-white transition-all duration-300 [&>svg]:scale-75 md:[&>svg]:scale-100"
           >
             {social.icon}
           </a>
@@ -173,9 +173,9 @@ export default function FloatingActions() {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
             onClick={scrollToTop}
-            className="w-12 h-12 bg-[#CDB255] text-white rounded-full shadow-lg flex items-center justify-center hover:bg-[#B89A44] transition-all cursor-pointer"
+            className="w-10 h-10 md:w-12 md:h-12 bg-[#CDB255] text-white rounded-full shadow-lg flex items-center justify-center hover:bg-[#B89A44] transition-all cursor-pointer"
           >
-            <ChevronUp size={24} />
+            <ChevronUp className="w-5 h-5 md:w-6 md:h-6" />
           </motion.button>
         )}
       </AnimatePresence>
