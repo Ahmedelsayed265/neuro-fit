@@ -3,6 +3,18 @@ import { ChevronLeft } from "lucide-react";
 import Image from "next/image";
 import FadeUp from "@/components/FadeUp";
 
+export async function generateStaticParams() {
+  const locales = ["ar", "en"];
+  const serviceIds = ["1", "2", "3", "4"];
+
+  return locales.flatMap((locale) =>
+    serviceIds.map((slug) => ({
+      locale,
+      slug,
+    }))
+  );
+}
+
 export default async function ServicePage({
   params,
 }: {

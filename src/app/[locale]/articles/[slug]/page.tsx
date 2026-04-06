@@ -4,6 +4,25 @@ import { Calendar, ChevronLeft } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import FadeUp from "@/components/FadeUp";
 
+export async function generateStaticParams() {
+  const locales = ["ar", "en"];
+  const articleSlugs = [
+    "إعادة-التأهيل-العصبي",
+    "تأهيل-عضلات-الحوض",
+    "جلسات-التخاطب",
+    "جيم-طبي-متكامل",
+    "إعادة-التأهيل-العصبي-2",
+    "جلسات-التخاطب-2",
+  ];
+
+  return locales.flatMap((locale) =>
+    articleSlugs.map((slug) => ({
+      locale,
+      slug,
+    }))
+  );
+}
+
 export default async function ArticlePage({
   params,
 }: {
