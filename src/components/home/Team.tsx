@@ -7,6 +7,7 @@ import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import FadeUp from "../FadeUp";
+import { Facebook, Linkedin } from "lucide-react";
 
 export default function Team() {
   const t = useTranslations("team");
@@ -24,7 +25,7 @@ export default function Team() {
     <section className="w-full py-10 px-3 md:px-0" id="medical-team">
       <FadeUp className="max-w-7xl mx-auto">
         <div className="flex flex-col items-center mb-12">
-          <span className="bg-[#CDB25533] text-[#5D3F26] px-6 py-2 rounded-full font-bold text-sm mb-6">
+          <span className="bg-[#E5DBA3] text-[#5D3F26] px-6 py-2 rounded-full font-bold text-sm mb-6">
             {t("badge")}
           </span>
 
@@ -49,7 +50,7 @@ export default function Team() {
         >
           {doctors.map((doc) => (
             <SwiperSlide key={doc.id}>
-              <div className="bg-[#F9F8ED] rounded-2xl overflow-hidden h-full flex flex-col">
+              <div className="bg-[#F9F8ED] rounded-2xl overflow-hidden h-full flex flex-col group cursor-pointer">
                 <div className="relative w-full aspect-square bg-gray-100">
                   <Image
                     src={doc.image}
@@ -58,6 +59,15 @@ export default function Team() {
                     sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                     className="object-cover"
                   />
+
+                  <div className="absolute inset-0 bg-[#CDB2554D] opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center gap-4">
+                    <div className="translate-y-4 group-hover:translate-y-0 transition-all duration-500 w-12 h-12 rounded-full bg-[#ffffff] flex items-center justify-center">
+                      <Facebook className="w-6 h-6 text-[#CDB255] hover:text-[#CDB255] transition-colors" />
+                    </div>
+                    <div className="translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-75 w-12 h-12 rounded-full bg-[#ffffff] flex items-center justify-center">
+                      <Linkedin className="w-6 h-6 text-[#CDB255] hover:text-[#CDB255] transition-colors" />
+                    </div>
+                  </div>
                 </div>
 
                 <div className="p-4 md:p-6 flex flex-col grow">

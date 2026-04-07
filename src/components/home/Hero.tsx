@@ -3,26 +3,39 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+
 import HeroSlide from "./HeroSlide";
 import Image from "next/image";
 import FadeUp from "../FadeUp";
 
 export default function Hero() {
   const t = useTranslations("hero");
+  const locale = useLocale();
 
   return (
     <section className="w-full px-3 md:px-0">
       <div className="max-w-7xl mx-auto">
-        <div className="relative rounded-3xl overflow-hidden group">
+        <div className="relative overflow-hidden group">
           <Swiper
-            spaceBetween={0}
+            modules={[Pagination, Navigation, Autoplay]}
+            dir={locale === "ar" ? "rtl" : "ltr"}
+            spaceBetween={12}
+            slidesPerView={1}
             centeredSlides={true}
             loop={true}
+            threshold={5}
+            loopAdditionalSlides={2}
+            grabCursor={true}
+            watchSlidesProgress={true}
+            observer={true}
+            observeParents={true}
+            speed={800}
+            touchRatio={1.2}
             autoplay={{
               delay: 5000,
               disableOnInteraction: false,
@@ -35,16 +48,15 @@ export default function Hero() {
               nextEl: ".swiper-button-next-custom",
               prevEl: ".swiper-button-prev-custom",
             }}
-            modules={[Pagination, Navigation, Autoplay]}
-            className="w-full h-158"
+            className="w-full h-[calc(100vh-100px)] rounded-3xl"
           >
-            <SwiperSlide>
+            <SwiperSlide key="slide-1" className="h-full rounded-3xl">
               <HeroSlide />
             </SwiperSlide>
-            <SwiperSlide>
+            <SwiperSlide key="slide-2" className="h-full rounded-3xl">
               <HeroSlide />
             </SwiperSlide>
-            <SwiperSlide>
+            <SwiperSlide key="slide-3" className="h-full rounded-3xl">
               <HeroSlide />
             </SwiperSlide>
           </Swiper>
@@ -57,7 +69,7 @@ export default function Hero() {
             <ChevronLeft className="w-6 h-6" />
           </button>
 
-          <div className="custom-pagination absolute bottom-32! justify-center z-10 flex gap-2"></div>
+          <div className="custom-pagination absolute bottom-32! z-10 flex gap-2 justify-center"></div>
 
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 w-full max-w-200">
             <FadeUp

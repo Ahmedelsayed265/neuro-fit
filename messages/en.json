@@ -20,13 +20,29 @@
     "item4": {
       "title": "Exercises for Chronic Diseases",
       "description": "Receiving physical therapy sessions in centers that provide you with hotel accommodation will benefit you and help you..."
+    },
+    "item5": {
+      "title": "Pediatric Rehabilitation",
+      "description": "Specialized programs to help children improve their motor skills and develop their physical abilities..."
+    },
+    "item6": {
+      "title": "Women Health",
+      "description": "Comprehensive care including pre and postnatal exercises and treatment of pelvic muscle problems..."
+    },
+    "item7": {
+      "title": "Sports Injuries",
+      "description": "Diagnosis and treatment of sports injuries and designing rehabilitation programs for the fastest return to the field..."
+    },
+    "item8": {
+      "title": "Geriatric Rehabilitation",
+      "description": "Improving balance and muscle strength for the elderly to ensure a more independent and safe life..."
     }
   },
   "contact us": "Contact Us",
   "hero": {
     "title": "Natural pain-free life starts with us at NeuroFit",
     "cta_contact": "Contact Us",
-    "cta_about": "Know More About Us",
+    "cta_about": "About Us",
     "feature_1": "Comfortable and supportive environment with integrated natural",
     "feature_2": "Latest technologies and treatment systems",
     "feature_3": "Highly experienced medical team"

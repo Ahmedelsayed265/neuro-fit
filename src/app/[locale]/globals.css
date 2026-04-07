@@ -155,4 +155,3 @@ body {
 @utility btn-premium-gold {
   @apply transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[5px_5px_0px_0px_#CDB255] active:translate-y-0.5 active:translate-x-0.5 active:shadow-[1px_1px_0px_0px_#CDB255];
 }
-

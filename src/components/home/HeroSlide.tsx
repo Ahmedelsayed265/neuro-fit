@@ -10,7 +10,7 @@ export default function HeroSlide() {
   const { isActive } = useSwiperSlide();
 
   return (
-    <div className="relative w-full h-full">
+    <div className="relative w-full h-full rounded-3xl overflow-hidden">
       <Image
         src="/images/slide.png"
         alt="Hero Slide"

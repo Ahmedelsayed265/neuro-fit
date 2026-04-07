@@ -15,7 +15,7 @@ export default function Contact() {
     <section className="w-full py-12 bg-white" id="contact-us">
       <FadeUp className="container mx-auto px-4 max-w-7xl">
         <div className="flex flex-col items-center mb-16 text-center">
-          <span className="bg-[#CDB25533] text-[#5D3F26] px-6 py-2 rounded-full font-semibold text-sm mb-6">
+          <span className="bg-[#E5DBA3] text-[#5D3F26] px-6 py-2 rounded-full font-semibold text-sm mb-6">
             {t("badge")}
           </span>
           <h2 className="text-2xl md:text-5xl font-semibold text-[#1A1A1A] leading-tight">

@@ -179,7 +179,7 @@ export default async function ArticlePage({
                           <Calendar size={12} />
                           <span>{item.date}</span>
                         </div>
-                        <h4 className="text-[#1A1A1A] font-bold text-base line-clamp-2 group-hover:text-[#CDB255] transition-colors leading-snug">
+                        <h4 className="text-[#1A1A1A] font-bold text-base text-start line-clamp-2 group-hover:text-[#CDB255] transition-colors leading-snug">
                           {item.title}
                         </h4>
                       </div>

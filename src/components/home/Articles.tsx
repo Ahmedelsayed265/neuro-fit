@@ -37,7 +37,7 @@ export default function Articles() {
     <section className="w-full py-20">
       <FadeUp className="container mx-auto px-4 max-w-7xl">
         <div className="flex flex-col items-center mb-16 text-center">
-          <span className="bg-[#CDB25533] text-[#5D3F26] px-6 py-2 rounded-full font-bold text-sm mb-6">
+          <span className="bg-[#E5DBA3] text-[#5D3F26] px-6 py-2 rounded-full font-bold text-sm mb-6">
             {t("badge")}
           </span>
           <h3 className="text-2xl md:text-5xl font-bold text-[#1A1A1A] leading-tight max-w-2xl">

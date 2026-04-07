@@ -55,7 +55,7 @@ export default function About() {
           </div>
 
           <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-right rtl:lg:text-right ltr:lg:text-left">
-            <span className="bg-[#EAE4C8] text-[#2F2013] px-6 py-1.5 rounded-full text-sm font-bold mb-6 inline-block">
+            <span className="bg-[#E5DBA3] text-[#5D3F26] px-6 py-1.5 rounded-full text-sm font-bold mb-6 inline-block">
               {t("badge")}
             </span>
 
@@ -63,7 +63,7 @@ export default function About() {
               {t("title")}
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4 w-full">
               <div className="flex flex-col gap-4">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 flex items-center justify-center">
@@ -79,7 +79,7 @@ export default function About() {
                     {t("vision_title")}
                   </h3>
                 </div>
-                <p className="text-[#2F2013]/70 text-sm leading-relaxed md:text-center text-start">
+                <p className="text-[#2F2013]/70 text-sm text-start">
                   {t("vision_desc")}
                 </p>
               </div>
@@ -99,7 +99,7 @@ export default function About() {
                     {t("mission_title")}
                   </h3>
                 </div>
-                <p className="text-[#2F2013]/70 text-sm leading-relaxed md:text-center text-start">
+                <p className="text-[#2F2013]/70 text-sm text-start">
                   {t("mission_desc")}
                 </p>
               </div>

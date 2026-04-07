@@ -29,7 +29,7 @@ export default function HomeVideo() {
 
       <FadeUp className="max-w-7xl mx-auto px-4 py-16 bg-transparent">
         <div className="flex flex-col items-center mb-12 text-center">
-          <span className="bg-[#CDB25533] text-[#5D3F26] px-6 py-2 rounded-full font-bold text-sm mb-6 uppercase tracking-wider backdrop-blur-sm">
+          <span className="bg-[#E5DBA3] text-[#5D3F26] px-6 py-2 rounded-full font-bold text-sm mb-6 uppercase tracking-wider backdrop-blur-sm">
             {t("badge")}
           </span>
           <h2 className="text-3xl md:text-5xl font-bold text-[#000000] mb-4">
@@ -41,7 +41,7 @@ export default function HomeVideo() {
           className="relative group cursor-pointer mx-auto"
           onClick={() => setIsOpen(true)}
         >
-          <div className="relative aspect-video rounded-3xl md:rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white/20">
+          <div className="relative aspect-video rounded-3xl md:rounded-[2.5rem] overflow-hidden border-4 border-white/20">
             <Image
               src="/images/home-video.jpg"
               alt="Video Thumbnail"
@@ -50,8 +50,8 @@ export default function HomeVideo() {
             />
 
             <div className="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/20 transition-colors">
-              <div className="w-20 h-20 md:w-22 md:h-22 rounded-full flex items-center justify-center border-2 border-white/60 relative">
-                <Play className="w-8 h-8 md:w-12 md:h-12 text-white fill-white ml-2" />
+              <div className="w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center border-2 border-white/60 relative group-hover:bg-[#CDB255] transition-colors">
+                <Play className="w-6 h-6 md:w-8 md:h-8 text-white fill-white group-hover:text-black group-hover:fill-black transition-colors" />
               </div>
             </div>
           </div>
