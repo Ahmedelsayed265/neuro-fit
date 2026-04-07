@@ -58,30 +58,29 @@ export default function MobileMenu({
     closed: {
       x: locale === "ar" ? "100%" : "-100%",
       transition: {
-        type: "spring",
-        stiffness: 400,
-        damping: 40,
+        type: "tween",
+        ease: "easeInOut",
+        duration: 0.5,
       },
     },
     open: {
       x: 0,
       transition: {
-        type: "spring",
-        stiffness: 300,
-        damping: 30,
-        staggerChildren: 0.07,
-        delayChildren: 0.2,
+        type: "tween",
+        ease: "easeOut",
+        duration: 0.5,
       },
     },
   };
 
   const itemVariants: Variants = {
-    closed: { opacity: 0, x: locale === "ar" ? 20 : -20, scale: 0.95 },
+    closed: { opacity: 0 },
     open: {
       opacity: 1,
-      x: 0,
-      scale: 1,
-      transition: { type: "spring", stiffness: 300, damping: 25 },
+      transition: { 
+        duration: 0.3,
+        delay: 0.2 // Small delay after menu starts moving
+      },
     },
   };
 
