@@ -1,7 +1,6 @@
-import BlogCard from "@/components/BlogCard";
-import Link from "next/link";
 import { ChevronRight, ChevronLeft } from "lucide-react";
-import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
+import BlogCard from "@/components/BlogCard";
 import FadeUp from "@/components/FadeUp";
 
 export default async function ArticlesPage({
@@ -10,7 +9,6 @@ export default async function ArticlesPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const t = await getTranslations("articles");
 
   const articles = [
     {

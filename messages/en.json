@@ -36,7 +36,8 @@
     "item8": {
       "title": "Geriatric Rehabilitation",
       "description": "Improving balance and muscle strength for the elderly to ensure a more independent and safe life..."
-    }
+    },
+    "view_all": "View All"
   },
   "contact us": "Contact Us",
   "hero": {
@@ -82,8 +83,8 @@
     }
   },
   "home_video": {
-    "badge": "Video Subtitle",
-    "title": "Video Title and Description"
+    "badge": "Tour in the center",
+    "title": "Discover NeuroFit from the inside"
   },
   "footer": {
     "address_label": "Address",

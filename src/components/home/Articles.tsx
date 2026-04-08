@@ -34,7 +34,7 @@ export default function Articles() {
   ];
 
   return (
-    <section className="w-full py-20">
+    <section className="w-full py-20" id="articles">
       <FadeUp className="container mx-auto px-4 max-w-7xl">
         <div className="flex flex-col items-center mb-16 text-center">
           <span className="bg-[#E5DBA3] text-[#5D3F26] px-6 py-2 rounded-full font-bold text-sm mb-6">

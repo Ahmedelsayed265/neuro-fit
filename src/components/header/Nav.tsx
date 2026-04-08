@@ -79,9 +79,14 @@ export default function Nav() {
       text: t("about us"),
     },
     {
-      href: "/#services",
-      id: "#services",
+      href: "/services",
+      id: "services",
       text: t("services.badge"),
+    },
+    {
+      href: "/articles",
+      id: "articles",
+      text: t("articles.badge"),
     },
     {
       href: "/#contact-us",
@@ -91,11 +96,14 @@ export default function Nav() {
   ];
 
   return (
-    <nav className="hidden lg:flex justify-center items-center gap-6">
+    <nav className="hidden lg:flex justify-center items-center gap-4">
       {navItems.map((item) => {
         const isActive =
           (item.id === "" && pathname === "/" && activeHash === "") ||
-          (item.id !== "" && activeHash === item.id);
+          (item.id.startsWith("#") && activeHash === item.id) ||
+          (!item.id.startsWith("#") &&
+            item.id !== "" &&
+            pathname === `/${item.id}`);
 
         return (
           <Link

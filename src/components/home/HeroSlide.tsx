@@ -18,7 +18,7 @@ export default function HeroSlide() {
         fill
       />
       <div className="absolute inset-0 hero_gradient flex items-center justify-center">
-        <AnimatePresence>
+        {/* <AnimatePresence>
           {isActive && (
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -51,7 +51,7 @@ export default function HeroSlide() {
               </div>
             </motion.div>
           )}
-        </AnimatePresence>
+        </AnimatePresence> */}
       </div>
     </div>
   );

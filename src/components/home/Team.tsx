@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 import { Facebook, Linkedin } from "lucide-react";
 
 import "swiper/css";
@@ -19,7 +19,7 @@ export default function Team() {
     { id: "doctor3", image: "/images/d3.png" },
     { id: "doctor4", image: "/images/d4.png" },
     { id: "doctor5", image: "/images/d2.png" },
-    { id: "doctor6", image: "/images/d3.png" }, 
+    { id: "doctor6", image: "/images/d3.png" },
   ];
 
   return (
@@ -36,9 +36,14 @@ export default function Team() {
         </div>
 
         <Swiper
-          modules={[Pagination]}
+          modules={[Pagination, Autoplay]}
           spaceBetween={16}
           slidesPerView={2}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
           pagination={{ clickable: true }}
           breakpoints={{
             1024: {
