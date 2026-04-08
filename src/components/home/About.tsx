@@ -120,7 +120,7 @@ export default function About() {
                     {t("values_title")}
                 </h3>
               </div>
-              <p className="text-[#2F2013]/70 text-sm leading-relaxed md:text-center text-start">
+              <p className="text-[#2F2013]/70 text-sm leading-relaxed text-start">
                 {t("values_desc")}
               </p>
             </div>

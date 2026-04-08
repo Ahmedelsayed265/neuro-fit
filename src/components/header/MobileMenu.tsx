@@ -58,28 +58,38 @@ export default function MobileMenu({
     closed: {
       x: locale === "ar" ? "100%" : "-100%",
       transition: {
-        type: "tween",
-        ease: "easeInOut",
-        duration: 0.5,
+        type: "spring",
+        stiffness: 400,
+        damping: 40,
       },
     },
     open: {
       x: 0,
       transition: {
-        type: "tween",
-        ease: "easeOut",
-        duration: 0.5,
+        type: "spring",
+        stiffness: 400,
+        damping: 40,
+        staggerChildren: 0.05,
+        delayChildren: 0.05,
       },
     },
   };
 
   const itemVariants: Variants = {
-    closed: { opacity: 0 },
+    closed: {
+      opacity: 0,
+      x: locale === "ar" ? 15 : -15,
+      transition: {
+        duration: 0.1,
+      },
+    },
     open: {
       opacity: 1,
-      transition: { 
-        duration: 0.3,
-        delay: 0.2 // Small delay after menu starts moving
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 450,
+        damping: 35,
       },
     },
   };
@@ -106,7 +116,10 @@ export default function MobileMenu({
             className="fixed top-0 bottom-0 w-[85%] max-w-[320px] bg-white z-70 py-5 px-4 shadow-2xl lg:hidden flex flex-col overflow-y-auto overflow-x-hidden"
             style={{ [locale === "ar" ? "right" : "left"]: 0 }}
           >
-            <div className="flex items-center justify-between mb-6">
+            <motion.div
+              variants={itemVariants}
+              className="flex items-center justify-between mb-6"
+            >
               <Link href="/" onClick={onClose} className="shrink-0">
                 <Image
                   src="/images/logo.svg"
@@ -123,7 +136,7 @@ export default function MobileMenu({
               >
                 <X className="w-5 h-5 text-gray-500" />
               </button>
-            </div>
+            </motion.div>
 
             <nav className="flex flex-col gap-1 mb-auto">
               {navItems.map((item) => (

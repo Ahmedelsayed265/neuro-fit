@@ -7,10 +7,10 @@ export default function Logo() {
       <Link href="/">
         <Image
           src="/images/logo.svg"
-          loading="lazy"
           alt="NeuroFit"
           width={200}
           height={50}
+          priority
         />
       </Link>
     </div>

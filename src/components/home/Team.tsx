@@ -3,11 +3,12 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
+import { Pagination } from "swiper/modules";
+import { Facebook, Linkedin } from "lucide-react";
+
 import "swiper/css";
 import "swiper/css/pagination";
 import FadeUp from "../FadeUp";
-import { Facebook, Linkedin } from "lucide-react";
 
 export default function Team() {
   const t = useTranslations("team");
@@ -35,11 +36,10 @@ export default function Team() {
         </div>
 
         <Swiper
-          modules={[Pagination, Autoplay]}
+          modules={[Pagination]}
           spaceBetween={16}
           slidesPerView={2}
           pagination={{ clickable: true }}
-          autoplay={{ delay: 3000, disableOnInteraction: false }}
           breakpoints={{
             1024: {
               slidesPerView: 4,
@@ -61,11 +61,11 @@ export default function Team() {
                   />
 
                   <div className="absolute inset-0 bg-[#CDB2554D] opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center gap-4">
-                    <div className="translate-y-4 group-hover:translate-y-0 transition-all duration-500 w-12 h-12 rounded-full bg-[#ffffff] flex items-center justify-center">
-                      <Facebook className="w-6 h-6 text-[#CDB255] hover:text-[#CDB255] transition-colors" />
+                    <div className="translate-y-4 group-hover:translate-y-0 transition-all duration-500 md:w-12 w-8 h-8 md:h-12 rounded-full bg-[#ffffff] flex items-center justify-center">
+                      <Facebook className="md:w-6 w-4 h-4 md:h-6 text-[#CDB255] hover:text-[#CDB255] transition-colors" />
                     </div>
-                    <div className="translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-75 w-12 h-12 rounded-full bg-[#ffffff] flex items-center justify-center">
-                      <Linkedin className="w-6 h-6 text-[#CDB255] hover:text-[#CDB255] transition-colors" />
+                    <div className="translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-75 md:w-12 w-8 h-8 md:h-12 rounded-full bg-[#ffffff] flex items-center justify-center">
+                      <Linkedin className="md:w-6 w-4 h-4 md:h-6 text-[#CDB255] hover:text-[#CDB255] transition-colors" />
                     </div>
                   </div>
                 </div>
