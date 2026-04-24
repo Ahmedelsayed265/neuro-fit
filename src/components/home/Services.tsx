@@ -6,33 +6,12 @@ import { ChevronLeftCircle } from "lucide-react";
 import FadeUp from "../FadeUp";
 import Image from "next/image";
 import ServiceCard from "../ServiceCard";
+import { Service } from "@/types/api";
 
-export default function Services() {
+export default function Services({ services }: { services: Service[] }) {
   const t = useTranslations("services");
 
-  const servicesList = [
-    {
-      id: 1,
-      title: t("item1.title"),
-      image: "/images/about1.jpg",
-      description: t("item1.description"),
-      icon: "/images/nervous system.svg",
-    },
-    {
-      id: 2,
-      title: t("item2.title"),
-      image: "/images/about2.jpg",
-      description: t("item2.description"),
-      icon: "/images/hroom.svg",
-    },
-    {
-      id: 3,
-      title: t("item3.title"),
-      image: "/images/about1.jpg",
-      description: t("item3.description"),
-      icon: "/images/exercise.svg",
-    },
-  ];
+  const servicesList = services.filter((s) => s.is_featured).slice(0, 3);
 
   return (
     <section className="relative w-full py-12 overflow-hidden" id="services">

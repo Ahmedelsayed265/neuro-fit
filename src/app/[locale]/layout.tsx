@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 
 import { Noto_Kufi_Arabic } from "next/font/google";
 
-import { getMessages, setRequestLocale } from "next-intl/server";
+import { getMessages, setRequestLocale, getTranslations } from "next-intl/server";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { Toaster } from "sonner";
+import { getSettings } from "../fetches";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 
@@ -20,72 +22,81 @@ const notoKufiArabic = Noto_Kufi_Arabic({
 
 const SITE_URL = process.env.SITE_URL || "http://localhost:3000";
 
-export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "metadata" });
 
-  title: {
-    default: "Neuro Fit",
-    template: "%s | Neuro Fit",
-  },
+  return {
+    metadataBase: new URL(SITE_URL),
 
-  description: "",
-
-  keywords: ["Neuro Fit"],
-
-  authors: [
-    {
-      name: "Neuro Fit",
-      url: SITE_URL,
+    title: {
+      default: t("title"),
+      template: `%s | ${t("title")}`,
     },
-  ],
 
-  creator: "Neuro Fit",
-  publisher: "Neuro Fit",
+    description: t("description"),
 
-  robots: {
-    index: true,
-    follow: true,
-  },
+    keywords: t("keywords").split(", "),
 
-  alternates: {
-    canonical: SITE_URL,
-  },
-
-  openGraph: {
-    title: "Neuro Fit",
-    description: "",
-    url: SITE_URL,
-    siteName: "Neuro Fit",
-    type: "website",
-
-    images: [
+    authors: [
       {
-        url: "/images/logo.svg",
-        width: 1200,
-        height: 630,
-        alt: "Neuro Fit",
+        name: "Neuro Fit",
+        url: SITE_URL,
       },
     ],
-  },
 
-  twitter: {
-    card: "summary_large_image",
-    title: "Neuro Fit",
-    description: "",
-    images: ["/images/logo.svg"],
-  },
+    creator: "Neuro Fit",
+    publisher: "Neuro Fit",
 
-  icons: {
-    icon: "/images/fav.svg",
-    apple: "/images/fav.svg",
-  },
+    robots: {
+      index: true,
+      follow: true,
+    },
 
-  category: "",
+    alternates: {
+      canonical: SITE_URL,
+    },
 
-  verification: {
-    google: "",
-  },
-};
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      url: SITE_URL,
+      siteName: "Neuro Fit",
+      type: "website",
+
+      images: [
+        {
+          url: "/images/logo.svg",
+          width: 1200,
+          height: 630,
+          alt: t("title"),
+        },
+      ],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: t("title"),
+      description: t("description"),
+      images: ["/images/logo.svg"],
+    },
+
+    icons: {
+      icon: "/images/fav.svg",
+      apple: "/images/fav.svg",
+    },
+
+    category: "Health",
+
+    verification: {
+      google: "",
+    },
+  };
+}
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -106,7 +117,10 @@ export default async function RootLayout({
 
   setRequestLocale(locale);
 
-  const messages = await getMessages({ locale });
+  const [messages, settings] = await Promise.all([
+    getMessages({ locale }),
+    getSettings(locale),
+  ]);
 
   const schema = {
     "@context": "https://schema.org",
@@ -137,12 +151,14 @@ export default async function RootLayout({
           now={new Date()}
           messages={messages}
         >
-          <Header locale={locale} />
+          <Toaster position="top-center" richColors />
+          <Header locale={locale} settings={settings} />
           <main>{children}</main>
-          <Footer />
-          <FloatingActions />
+          <Footer settings={settings} />
+          <FloatingActions settings={settings} />
         </NextIntlClientProvider>
       </body>
     </html>
   );
 }
+

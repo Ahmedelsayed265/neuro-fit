@@ -3,68 +3,17 @@ import ServiceCard from "@/components/ServiceCard";
 import { Link } from "@/i18n/navigation";
 import { ChevronLeft } from "lucide-react";
 import { getTranslations } from "next-intl/server";
+import { getServices } from "../../fetches";
 
-export default async function ServicesPage() {
+
+export default async function ServicesPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   const t = await getTranslations("services");
-
-  const servicesList = [
-    {
-      id: 1,
-      title: t("item1.title"),
-      image: "/images/about1.jpg",
-      description: t("item1.description"),
-      icon: "/images/nervous system.svg",
-    },
-    {
-      id: 2,
-      title: t("item2.title"),
-      image: "/images/about2.jpg",
-      description: t("item2.description"),
-      icon: "/images/hroom.svg",
-    },
-    {
-      id: 3,
-      title: t("item3.title"),
-      image: "/images/about1.jpg",
-      description: t("item3.description"),
-      icon: "/images/exercise.svg",
-    },
-    {
-      id: 4,
-      title: t("item4.title"),
-      image: "/images/about2.jpg",
-      description: t("item4.description"),
-      icon: "/images/rehabilitation.svg",
-    },
-    {
-      id: 5,
-      title: t("item5.title"),
-      image: "/images/about1.jpg",
-      description: t("item5.description"),
-      icon: "/images/rehabilitation.svg",
-    },
-    {
-      id: 6,
-      title: t("item6.title"),
-      image: "/images/about2.jpg",
-      description: t("item6.description"),
-      icon: "/images/rehabilitation.svg",
-    },
-    {
-      id: 7,
-      title: t("item7.title"),
-      image: "/images/about1.jpg",
-      description: t("item7.description"),
-      icon: "/images/rehabilitation.svg",
-    },
-    {
-      id: 8,
-      title: t("item8.title"),
-      image: "/images/about2.jpg",
-      description: t("item8.description"),
-      icon: "/images/rehabilitation.svg",
-    },
-  ];
+  const services = await getServices(locale);
 
   return (
     <section>
@@ -91,7 +40,7 @@ export default async function ServicesPage() {
       <div className="py-12 px-3 md:px-0">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {servicesList.map((service, index) => (
+            {services.map((service, index) => (
               <FadeUp key={index} delay={index * 0.1}>
                 <ServiceCard service={service} />
               </FadeUp>

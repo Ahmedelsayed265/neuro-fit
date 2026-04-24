@@ -3,13 +3,14 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
-export default function FooterAddress() {
+export default function FooterAddress({ address }: { address?: string }) {
   const t = useTranslations();
 
   return (
     <div className="relative -mt-24 z-10 flex justify-center px-4">
       <div className="relative w-full max-w-[857px] aspect-857/99 flex items-center justify-center">
         <div className="absolute inset-0 z-[-1]">
+          {/* SVG Omitted for brevity, keeping original */}
           <svg
             width="100%"
             height="100%"
@@ -43,10 +44,11 @@ export default function FooterAddress() {
             </span>
           </div>
           <p className="text-xs md:text-[14px] font-medium max-w-2xl leading-relaxed opacity-90">
-            {t("footer.address")}
+            {address || t("footer.address")}
           </p>
         </div>
       </div>
     </div>
   );
 }
+

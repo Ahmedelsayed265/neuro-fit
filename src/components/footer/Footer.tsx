@@ -6,11 +6,13 @@ import FooterAbout from "./FooterAbout";
 import FooterQuickLinks from "./FooterQuickLinks";
 import FooterContactInfo from "./FooterContactInfo";
 
-export default function Footer() {
+import { Settings } from "@/types/api";
+
+export default function Footer({ settings }: { settings: Settings | null }) {
   return (
     <footer className="w-full">
-      <FooterMap />
-      <FooterAddress />
+      <FooterMap mapUrl={settings?.google_map_embed_link} />
+      <FooterAddress address={settings?.address} />
       <div
         className="bg-[#2F2013] py-16 md:px-0 px-6 -mt-1 relative overflow-hidden md:rounded-t-[32px]"
         style={{
@@ -20,9 +22,9 @@ export default function Footer() {
         }}
       >
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-white rtl:text-right ltr:text-left relative z-10">
-          <FooterAbout />
+          <FooterAbout logoUrl={settings?.footer_logo} settings={settings} />
           <FooterQuickLinks />
-          <FooterContactInfo />
+          <FooterContactInfo settings={settings} />
         </div>
 
         <div className="absolute inset-0 bg-[#2F2013]/20 pointer-events-none" />

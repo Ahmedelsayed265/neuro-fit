@@ -1,13 +1,21 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { Menu } from "lucide-react";
 import Logo from "./Logo";
 import Nav from "./Nav";
 import HeaderActions from "./HeaderActions";
 import MobileMenu from "./MobileMenu";
-import { useEffect, useState } from "react";
-import { Menu } from "lucide-react";
 
-export default function Header({ locale }: { locale: string }) {
+import { Settings } from "@/types/api";
+
+export default function Header({
+  locale,
+  settings,
+}: {
+  locale: string;
+  settings: Settings | null;
+}) {
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -31,9 +39,9 @@ export default function Header({ locale }: { locale: string }) {
       }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 lg:px-8 xl:px-0">
-        <Logo />
+        <Logo logoUrl={settings?.main_logo} />
         <Nav />
-        <HeaderActions locale={locale} />
+        <HeaderActions locale={locale} settings={settings} />
         
         {/* Mobile Menu Button */}
         <button
@@ -49,7 +57,9 @@ export default function Header({ locale }: { locale: string }) {
           isOpen={isMenuOpen}
           onClose={() => setIsMenuOpen(false)}
           locale={locale}
+          settings={settings}
         />
+
       </div>
     </header>
   );

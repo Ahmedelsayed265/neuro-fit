@@ -2,70 +2,22 @@ import { ChevronRight, ChevronLeft } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import BlogCard from "@/components/BlogCard";
 import FadeUp from "@/components/FadeUp";
+import { getArticlesPaginated } from "../../fetches";
 
 export default async function ArticlesPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ locale: string }>;
+  searchParams: Promise<{ page?: string }>;
 }) {
   const { locale } = await params;
+  const { page: pageParam } = await searchParams;
+  const currentPage = Number(pageParam) || 1;
 
-  const articles = [
-    {
-      id: 1,
-      title: "إعادة التأهيل العصبي",
-      description:
-        "هل تتساءل كيف يستعيد شخص ما قدرته على الحركة والكلام بعد إصابة بالغة في الدماغ أو الحبل الشوكي؟",
-      date: "20 مارس 2024",
-      image: "/images/about1.jpg",
-      slug: "إعادة-التأهيل-العصبي",
-    },
-    {
-      id: 2,
-      title: "إعادة تأهيل عضلات الحوض: تقنية فعالة",
-      description:
-        "يعاني البعض مشكلات متكررة في التبول أو تسريب أو الشعور الدائم بالحاجة إليه، مما يسبب لهم إزعاجاً.",
-      date: "20 مارس 2024",
-      image: "/images/services.png",
-      slug: "تأهيل-عضلات-الحوض",
-    },
-    {
-      id: 3,
-      title: "جلسات التخاطب",
-      description:
-        "ينتظر الوالدان بلهفة نمو طفلهم لسماع كلماته الأولى بأسلوبه الحنون، ففي البداية يتلعثم في النطق.",
-      date: "20 مارس 2024",
-      image: "/images/about1.jpg",
-      slug: "جلسات-التخاطب",
-    },
-    {
-      id: 4,
-      title: "جيم طبي متكامل",
-      description:
-        "تعمل صالة الجيم بمثابة مرحلة انتقالية مهمة قبل ممارسة التمارين القوية والعودة للمستوى الطبيعي.",
-      date: "20 مارس 2024",
-      image: "/images/services.png",
-      slug: "جيم-طبي-متكامل",
-    },
-    {
-      id: 5,
-      title: "إعادة التأهيل العصبي",
-      description:
-        "هل تتساءل كيف يستعيد شخص ما قدرته على الحركة والكلام بعد إصابة بالغة في الدماغ أو الحبل الشوكي؟",
-      date: "20 مارس 2024",
-      image: "/images/about1.jpg",
-      slug: "إعادة-التأهيل-العصبي-2",
-    },
-    {
-      id: 6,
-      title: "جلسات التخاطب",
-      description:
-        "ينتظر الوالدان بلهفة نمو طفلهم لسماع كلماته الأولى بأسلوبه الحنون، ففي البداية يتلعثم في النطق.",
-      date: "20 مارس 2024",
-      image: "/images/services.png",
-      slug: "جلسات-التخاطب-2",
-    },
-  ];
+  const res = await getArticlesPaginated(locale, currentPage);
+  const articles = res?.data || [];
+  const meta = res?.meta;
 
   const isRTL = locale === "ar";
 
@@ -103,32 +55,58 @@ export default async function ArticlesPage({
             ))}
           </div>
 
-          <FadeUp className="mt-16 flex justify-center items-center gap-2">
-            <button className="w-10 h-10 flex items-center justify-center border border-[#EAEAEA] rounded-lg hover:border-[#CDB255] hover:text-[#CDB255] transition-all">
-              {isRTL ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
-            </button>
+          {meta && meta.last_page > 1 && (
+            <FadeUp className="mt-16 flex justify-center items-center gap-2">
+              <Link
+                href={
+                  meta.current_page > 1
+                    ? `/articles?page=${meta.current_page - 1}`
+                    : "#"
+                }
+                className={`w-10 h-10 flex items-center justify-center border border-[#EAEAEA] rounded-lg transition-all ${
+                  meta.current_page === 1
+                    ? "opacity-50 cursor-not-allowed pointer-events-none"
+                    : "hover:border-[#CDB255] hover:text-[#CDB255]"
+                }`}
+              >
+                {isRTL ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
+              </Link>
 
-            <button className="w-10 h-10 flex items-center justify-center bg-[#CDB255] text-white rounded-lg font-bold">
-              1
-            </button>
-            <button className="w-10 h-10 flex items-center justify-center border border-[#EAEAEA] rounded-lg hover:border-[#CDB255] hover:text-[#CDB255] transition-all font-bold">
-              2
-            </button>
-            <button className="w-10 h-10 flex items-center justify-center border border-[#EAEAEA] rounded-lg hover:border-[#CDB255] hover:text-[#CDB255] transition-all font-bold">
-              3
-            </button>
+              {Array.from({ length: meta.last_page }, (_, i) => i + 1).map(
+                (p) => (
+                  <Link
+                    key={p}
+                    href={`/articles?page=${p}`}
+                    className={`w-10 h-10 flex items-center justify-center rounded-lg font-bold transition-all ${
+                      p === meta.current_page
+                        ? "bg-[#CDB255] text-white"
+                        : "border border-[#EAEAEA] hover:border-[#CDB255] hover:text-[#CDB255]"
+                    }`}
+                  >
+                    {p}
+                  </Link>
+                )
+              )}
 
-            <span className="px-2 text-[#9ca3af]">...</span>
-            <button className="w-10 h-10 flex items-center justify-center border border-[#EAEAEA] rounded-lg hover:border-[#CDB255] hover:text-[#CDB255] transition-all font-bold">
-              10
-            </button>
-
-            <button className="w-10 h-10 flex items-center justify-center border border-[#EAEAEA] rounded-lg hover:border-[#CDB255] hover:text-[#CDB255] transition-all">
-              {isRTL ? <ChevronLeft size={20} /> : <ChevronRight size={20} />}
-            </button>
-          </FadeUp>
+              <Link
+                href={
+                  meta.current_page < meta.last_page
+                    ? `/articles?page=${meta.current_page + 1}`
+                    : "#"
+                }
+                className={`w-10 h-10 flex items-center justify-center border border-[#EAEAEA] rounded-lg transition-all ${
+                  meta.current_page === meta.last_page
+                    ? "opacity-50 cursor-not-allowed pointer-events-none"
+                    : "hover:border-[#CDB255] hover:text-[#CDB255]"
+                }`}
+              >
+                {isRTL ? <ChevronLeft size={20} /> : <ChevronRight size={20} />}
+              </Link>
+            </FadeUp>
+          )}
         </div>
       </div>
     </section>
   );
 }
+

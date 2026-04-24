@@ -1,11 +1,19 @@
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 
-export default function HeaderActions({ locale }: { locale: string }) {
+import { Settings } from "@/types/api";
+
+export default function HeaderActions({
+  locale,
+  settings,
+}: {
+  locale: string;
+  settings: Settings | null;
+}) {
   return (
     <div className="hidden lg:flex justify-end items-center gap-8">
       <a
-        href="tel:+201234567890"
+        href={`tel:${settings?.telephone || "+201234567890"}`}
         className="flex items-center justify-center gap-2"
       >
         <span className="w-10 h-10 flex items-center justify-center bg-[#CDB255] rounded-full">
@@ -17,7 +25,7 @@ export default function HeaderActions({ locale }: { locale: string }) {
             height={20}
           />
         </span>
-        01234567890
+        {settings?.telephone || "01234567890"}
       </a>
 
       <Link
@@ -39,3 +47,4 @@ export default function HeaderActions({ locale }: { locale: string }) {
     </div>
   );
 }
+

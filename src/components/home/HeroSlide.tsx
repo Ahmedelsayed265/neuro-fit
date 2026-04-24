@@ -1,18 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import { useTranslations } from "next-intl";
-import { useSwiperSlide } from "swiper/react";
-import { motion, AnimatePresence } from "framer-motion";
+import { Banner } from "@/types/api";
+import { Link } from "@/i18n/navigation";
 
-export default function HeroSlide() {
-  const t = useTranslations("hero");
-  const { isActive } = useSwiperSlide();
+export default function HeroSlide({ banner }: { banner?: Banner }) {
+  const imageUrl = banner?.image_url || "/images/slide.png";
 
-  return (
-    <div className="relative w-full h-full rounded-3xl overflow-hidden">
+  const content = (
+    <>
       <Image
-        src="/images/slide.png"
+        src={imageUrl}
         alt="Hero Slide"
         className="object-cover rounded-3xl"
         fill
@@ -53,6 +51,22 @@ export default function HeroSlide() {
           )}
         </AnimatePresence> */}
       </div>
+    </>
+  );
+
+  return (
+    <div className="relative w-full h-full rounded-3xl overflow-hidden">
+      {banner?.url ? (
+        <Link
+          href={banner.url}
+          rel="noopener noreferrer"
+          className="block w-full h-full"
+        >
+          {content}
+        </Link>
+      ) : (
+        content
+      )}
     </div>
   );
 }

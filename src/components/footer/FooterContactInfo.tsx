@@ -3,32 +3,41 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
-export default function FooterContactInfo() {
+import { Settings } from "@/types/api";
+
+export default function FooterContactInfo({
+  settings,
+}: {
+  settings: Settings | null;
+}) {
   const t = useTranslations();
 
   const contacts = [
     {
       icon: "/images/call2.svg",
       label: t("footer.phone_label"),
-      value: "02/38366544",
+      value: settings?.telephone || "02/38366544",
       dir: "ltr",
-      alt: "Phone"
+      alt: "Phone",
     },
     {
       icon: "/images/call1.svg",
       label: t("footer.mobile_label"),
-      value: "+201022224271",
+      value: settings
+        ? `${settings.phone_code}${settings.phone}`
+        : "+201022224271",
       dir: "ltr",
-      alt: "Call"
+      alt: "Call",
     },
     {
       icon: "/images/email.svg",
       label: t("footer.email_label"),
-      value: "neurofiteg@gmail.com",
+      value: settings?.email || "neurofiteg@gmail.com",
       className: "break-all",
-      alt: "Email"
-    }
+      alt: "Email",
+    },
   ];
+
 
   return (
     <div className="flex flex-col gap-6">

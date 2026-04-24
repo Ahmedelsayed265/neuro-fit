@@ -3,8 +3,9 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import FadeUp from "../FadeUp";
+import { Settings } from "@/types/api";
 
-export default function About() {
+export default function About({ settings }: { settings: Settings | null }) {
   const t = useTranslations("about");
 
   return (
@@ -44,7 +45,7 @@ export default function About() {
                 </div>
                 <div className="text-center">
                   <p className="text-xl md:text-3xl font-bold text-[#2F2013]">
-                    {t("experience_years")}
+                    {settings?.years_of_experience || t("experience_years")}
                   </p>
                   <p className="text-sm font-medium text-[#2F2013]/70 uppercase tracking-wider">
                     {t("experience_label")}
@@ -79,8 +80,8 @@ export default function About() {
                     {t("vision_title")}
                   </h3>
                 </div>
-                <p className="text-[#2F2013]/70 text-sm text-start">
-                  {t("vision_desc")}
+                <p className="text-[#2F2013]/70 text-sm text-start leading-relaxed">
+                  {settings?.vision || t("vision_desc")}
                 </p>
               </div>
 
@@ -99,8 +100,8 @@ export default function About() {
                     {t("mission_title")}
                   </h3>
                 </div>
-                <p className="text-[#2F2013]/70 text-sm text-start">
-                  {t("mission_desc")}
+                <p className="text-[#2F2013]/70 text-sm text-start leading-relaxed">
+                  {settings?.mission || t("mission_desc")}
                 </p>
               </div>
             </div>
@@ -121,7 +122,7 @@ export default function About() {
                 </h3>
               </div>
               <p className="text-[#2F2013]/70 text-sm leading-relaxed text-start">
-                {t("values_desc")}
+                {settings?.our_valus || t("values_desc")}
               </p>
             </div>
           </div>
@@ -130,3 +131,4 @@ export default function About() {
     </section>
   );
 }
+

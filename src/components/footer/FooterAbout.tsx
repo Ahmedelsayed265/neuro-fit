@@ -4,7 +4,15 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import FooterSocialLinks from "./FooterSocialLinks";
 
-export default function FooterAbout() {
+import { Settings } from "@/types/api";
+
+export default function FooterAbout({
+  logoUrl,
+  settings,
+}: {
+  logoUrl?: string;
+  settings: Settings | null;
+}) {
   const t = useTranslations();
 
   return (
@@ -12,7 +20,7 @@ export default function FooterAbout() {
       <div className="relative w-48 h-24">
         <Image
           fill
-          src="/images/logo-footer.svg"
+          src={logoUrl || "/images/logo-footer.svg"}
           alt="Neuro Fit"
           className="object-contain"
         />
@@ -22,7 +30,7 @@ export default function FooterAbout() {
         {t("footer.description")}
       </p>
 
-      <FooterSocialLinks />
+      <FooterSocialLinks settings={settings} />
     </div>
   );
 }

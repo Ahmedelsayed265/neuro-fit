@@ -1,7 +1,8 @@
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import { Service } from "@/types/api";
 
-export default function ServiceCard({ service }: { service: any }) {
+export default function ServiceCard({ service }: { service: Service }) {
   return (
     <Link
       key={service.id}
@@ -11,7 +12,7 @@ export default function ServiceCard({ service }: { service: any }) {
       <div
         className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         style={{
-          backgroundImage: `url(${service.image})`,
+          backgroundImage: `url(${service.image_url})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -21,7 +22,7 @@ export default function ServiceCard({ service }: { service: any }) {
 
       <div className="relative z-10 flex flex-col gap-5">
         <Image
-          src={service.icon}
+          src={service.icon_url}
           alt={service.title}
           width={40}
           height={40}
@@ -32,7 +33,7 @@ export default function ServiceCard({ service }: { service: any }) {
           {service.title}
         </h3>
 
-        <p className="text-[#606060] text-sm md:text-base group-hover:text-white/90 transition-colors duration-300">
+        <p className="text-[#606060] text-sm md:text-base group-hover:text-white/90 transition-colors duration-300 line-clamp-2">
           {service.description}
         </p>
       </div>

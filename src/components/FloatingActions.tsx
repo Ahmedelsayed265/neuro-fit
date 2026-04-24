@@ -3,9 +3,24 @@
 import { useEffect, useState } from "react";
 import { ChevronUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Settings } from "@/types/api";
 import { socialLinks } from "@/constants/socialLinks";
 
-export default function FloatingActions() {
+export default function FloatingActions({
+  settings,
+}: {
+  settings: Settings | null;
+}) {
+  const dynamicSocialLinks = socialLinks.map((social) => {
+    let href = social.href;
+    if (social.id === "whatsapp") href = settings?.whatsaap_url || "#";
+    if (social.id === "facebook") href = settings?.facebook_url || "#";
+    if (social.id === "instagram") href = settings?.intgram_url || "#";
+    if (social.id === "tiktok") href = settings?.tiktok_url || "#";
+    if (social.id === "youtube") href = settings?.youtube_url || "#";
+    return { ...social, href };
+  });
+
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
@@ -29,7 +44,7 @@ export default function FloatingActions() {
         animate={{ x: 0, opacity: 1 }}
         className="hidden md:flex md:flex-col bg-white p-1.5 md:p-2 rounded-full shadow-[0px_4px_20px_0px_#0000001A] gap-2 md:gap-3 border border-[#F1EDD0]"
       >
-        {socialLinks.map((social) => (
+        {dynamicSocialLinks.map((social) => (
           <a
             key={social.id}
             href={social.href}

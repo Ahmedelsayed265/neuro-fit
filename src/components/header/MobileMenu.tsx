@@ -16,19 +16,33 @@ import {
 import Image from "next/image";
 
 import { socialLinks } from "@/constants/socialLinks";
+import { Settings } from "@/types/api";
 
 interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
   locale: string;
+  settings: Settings | null;
 }
 
 export default function MobileMenu({
   isOpen,
   onClose,
   locale,
+  settings,
 }: MobileMenuProps) {
   const t = useTranslations();
+
+  const dynamicSocialLinks = socialLinks.map((social) => {
+    let href = social.href;
+    if (social.id === "whatsapp") href = settings?.whatsaap_url || "#";
+    if (social.id === "facebook") href = settings?.facebook_url || "#";
+    if (social.id === "instagram") href = settings?.intgram_url || "#";
+    if (social.id === "tiktok") href = settings?.tiktok_url || "#";
+    if (social.id === "youtube") href = settings?.youtube_url || "#";
+    return { ...social, href };
+  });
+
 
   const navItems = [
     { href: "/", text: t("home"), icon: <Home className="w-5 h-5" /> },
@@ -122,11 +136,11 @@ export default function MobileMenu({
             >
               <Link href="/" onClick={onClose} className="shrink-0">
                 <Image
-                  src="/images/logo.svg"
+                  src={settings?.main_logo || "/images/logo.svg"}
                   alt="NeuroFit"
                   width={130}
                   height={32}
-                  className="h-auto w-auto"
+                  className="h-auto w-auto object-contain"
                 />
               </Link>
               <button
@@ -160,14 +174,14 @@ export default function MobileMenu({
               className="mt-4 pt-4 border-t border-gray-100 flex flex-col gap-2"
             >
               <a
-                href="tel:+201234567890"
+                href={`tel:${settings?.telephone || "+201234567890"}`}
                 className="flex items-center gap-3 text-gray-700 p-1.5 hover:bg-gray-50 rounded-lg transition-colors"
               >
                 <span className="w-9 h-9 flex items-center justify-center bg-[#CDB255]/10 rounded-full text-[#CDB255]">
                   <Phone className="w-4.5 h-4.5" />
                 </span>
                 <span className="font-medium text-gray-600 text-[14px]">
-                  01234567890
+                  {settings?.telephone || "01234567890"}
                 </span>
               </a>
 
@@ -187,7 +201,7 @@ export default function MobileMenu({
 
               {/* Social Links */}
               <div className="flex items-center gap-2.5 mt-2 pt-3 border-t border-gray-50">
-                {socialLinks.map((social) => (
+                {dynamicSocialLinks.map((social) => (
                   <a
                     key={social.id}
                     href={social.href}
