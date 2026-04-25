@@ -62,7 +62,7 @@ export default function Services({ services }: { services: Service[] }) {
                   <div className="relative z-10 flex items-center justify-center h-full">
                     <h3 className="text-base md:text-xl font-semibold text-[#170E08] group-hover:text-white transition-colors duration-300 text-center flex items-center gap-2">
                       {t("view_all")}
-                      <ChevronLeftCircle />
+                      <ChevronLeftCircle className="rtl:rotate-0 rotate-180 transition-transform duration-300 group-hover:scale-110" />
                     </h3>
                   </div>
                 </Link>

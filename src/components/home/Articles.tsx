@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Calendar } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import FadeUp from "../FadeUp";
@@ -9,6 +9,7 @@ import { Article } from "@/types/api";
 
 export default function Articles({ articles }: { articles: Article[] }) {
   const t = useTranslations("articles");
+  const locale = useLocale();
 
   if (!articles || articles.length === 0) return null;
 
@@ -20,7 +21,7 @@ export default function Articles({ articles }: { articles: Article[] }) {
   const formatDate = (dateStr?: string) => {
     if (!dateStr) return "";
     const date = new Date(dateStr);
-    return new Intl.DateTimeFormat("ar-EG", {
+    return new Intl.DateTimeFormat(locale === "ar" ? "ar-EG" : "en-US", {
       day: "numeric",
       month: "long",
       year: "numeric",

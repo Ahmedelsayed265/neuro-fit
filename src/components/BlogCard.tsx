@@ -1,7 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Calendar } from "lucide-react";
 import { Article } from "@/types/api";
+import { useLocale } from "next-intl";
 
 export default function BlogCard({
   slug,
@@ -10,10 +13,12 @@ export default function BlogCard({
   image_url,
   created_at,
 }: Article) {
+  const locale = useLocale();
+  
   const formatDate = (dateStr?: string) => {
     if (!dateStr) return "";
     const date = new Date(dateStr);
-    return new Intl.DateTimeFormat("ar-EG", {
+    return new Intl.DateTimeFormat(locale === "ar" ? "ar-EG" : "en-US", {
       day: "numeric",
       month: "long",
       year: "numeric",
