@@ -66,6 +66,28 @@ export async function getArticles(locale: string): Promise<Article[]> {
   return res?.data || [];
 }
 
+export async function getArticleBySlug(
+  slug: string,
+  locale: string
+): Promise<Article | null> {
+  const res = await fetcher<Article>(`/website/articles/${slug}`, locale, {
+    cache: "no-store",
+  });
+
+  return res?.data || null;
+}
+
+export async function getServiceBySlug(
+  slug: string,
+  locale: string
+): Promise<Service | null> {
+  const res = await fetcher<Service>(`/website/services/${slug}`, locale, {
+    cache: "no-store",
+  });
+
+  return res?.data || null;
+}
+
 export async function getArticlesPaginated(
   locale: string,
   page: number = 1

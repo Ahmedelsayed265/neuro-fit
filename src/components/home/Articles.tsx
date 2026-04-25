@@ -42,7 +42,7 @@ export default function Articles({ articles }: { articles: Article[] }) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           <div className="lg:col-span-5">
             <Link
-              href={`/articles/${featuredArticle.id}`}
+              href={`/articles/${featuredArticle.slug}`}
               className="bg-white rounded-2xl shadow-[0px_8px_7.5px_0px_#E5DBA34D] overflow-hidden h-full flex flex-col p-4"
             >
               <div className="relative w-full h-[280px] md:h-[448px] rounded-[8px_8px_100px_100px] overflow-hidden mb-6">
@@ -79,7 +79,7 @@ export default function Articles({ articles }: { articles: Article[] }) {
             {sideArticles.map((article) => (
               <Link
                 key={article.id}
-                href={`/articles/${article.id}`}
+                href={`/articles/${article.slug}`}
                 className="bg-white rounded-2xl shadow-[0px_8px_7.5px_0px_#E5DBA34D] overflow-hidden h-full flex flex-col md:flex-row gap-6 p-4"
               >
                 <div className="relative w-full md:w-[280px] h-[280px] md:h-[160px] shrink-0 rounded-[8px_8px_100px_100px] overflow-hidden sm:order-1">

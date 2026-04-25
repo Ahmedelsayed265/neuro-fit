@@ -4,7 +4,7 @@ import { Calendar } from "lucide-react";
 import { Article } from "@/types/api";
 
 export default function BlogCard({
-  id,
+  slug,
   title,
   description,
   image_url,
@@ -22,7 +22,7 @@ export default function BlogCard({
 
   return (
     <Link
-      href={`/articles/${id}`}
+      href={`/articles/${slug}`}
       className="bg-white rounded-2xl shadow-[0px_8px_7.5px_0px_#E5DBA34D] overflow-hidden h-full flex flex-col p-4 group"
     >
       <div

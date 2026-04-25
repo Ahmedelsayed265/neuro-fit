@@ -23,20 +23,33 @@ export interface Doctor {
 
 export interface Service {
   id: string;
+  slug: string;
   title: string;
   description: string;
   icon_url: string;
   image_url: string;
   is_featured: boolean;
+  content?: string;
+  faqs?: FAQ[];
+}
+
+export interface FAQ {
+  id: string;
+  sort_order: number;
+  question: string;
+  answer_html: string;
 }
 
 export interface Article {
   id: string;
+  slug: string;
   title: string;
   description: string;
   image_url: string;
   is_featured: boolean;
+  content?: string;
   created_at?: string;
+  faqs?: FAQ[];
 }
 
 export interface Settings {

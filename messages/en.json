@@ -37,7 +37,8 @@
       "title": "Geriatric Rehabilitation",
       "description": "Improving balance and muscle strength for the elderly to ensure a more independent and safe life..."
     },
-    "view_all": "View All"
+    "view_all": "View All",
+    "faqs_title": "Common Questions"
   },
   "contact us": "Contact Us",
   "hero": {
@@ -134,7 +135,8 @@
       "title": "Integrated Medical Gym",
       "desc": "The medical gym is an important transitional phase before strength exercises and returning to natural levels, especially after sports injuries..."
     },
-    "related_articles": "Related Articles"
+    "related_articles": "Related Articles",
+    "faqs_title": "Common Questions"
   },
   "contact": {
     "badge": "Contact Us",

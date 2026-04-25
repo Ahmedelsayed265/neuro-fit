@@ -6,7 +6,7 @@ export default function ServiceCard({ service }: { service: Service }) {
   return (
     <Link
       key={service.id}
-      href={`/services/${service.id}`}
+      href={`/services/${service.slug}`}
       className="group relative bg-white p-6 rounded-2xl border border-[#EAEAEA] flex flex-col gap-5 overflow-hidden transition-all duration-300"
     >
       <div
