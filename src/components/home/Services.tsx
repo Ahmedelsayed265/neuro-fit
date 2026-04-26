@@ -46,23 +46,12 @@ export default function Services({ services }: { services: Service[] }) {
 
                 <Link
                   href="/services"
-                  className="group relative bg-white p-6 rounded-2xl border border-[#EAEAEA] flex flex-col gap-5 overflow-hidden transition-all duration-300"
+                  className="group relative bg-white hover:bg-[#E5DBA3] p-6 rounded-2xl border border-[#EAEAEA] flex flex-col gap-5 overflow-hidden transition-all duration-300"
                 >
-                  <div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    style={{
-                      backgroundImage: `url('/images/about1.jpg')`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                    }}
-                  />
-
-                  <div className="absolute inset-0 bg-[#B8860B] opacity-0 group-hover:opacity-70 transition-opacity duration-300" />
-
                   <div className="relative z-10 flex items-center justify-center h-full">
-                    <h3 className="text-base md:text-xl font-semibold text-[#170E08] group-hover:text-white transition-colors duration-300 text-center flex items-center gap-2">
+                    <h3 className="text-base md:text-xl font-semibold text-[#170E08] group-hover:text-[#5D3F26] transition-colors duration-300 text-center flex items-center gap-2">
                       {t("view_all")}
-                      <ChevronLeftCircle className="rtl:rotate-0 rotate-180 transition-transform duration-300 group-hover:scale-110" />
+                      <ChevronLeftCircle className="rtl:rotate-0 rotate-180 transition-transform duration-300 group-hover:translate-x-[-4px] ltr:group-hover:translate-x-[4px]" />
                     </h3>
                   </div>
                 </Link>
