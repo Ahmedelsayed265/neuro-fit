@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence, Variants } from "framer-motion";
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import {
   X,
@@ -12,6 +12,7 @@ import {
   Info,
   Stethoscope,
   Send,
+  Newspaper,
 } from "lucide-react";
 import Image from "next/image";
 
@@ -32,6 +33,7 @@ export default function MobileMenu({
   settings,
 }: MobileMenuProps) {
   const t = useTranslations();
+  const pathname = usePathname();
 
   const dynamicSocialLinks = socialLinks.map((social) => {
     let href = social.href;
@@ -57,9 +59,14 @@ export default function MobileMenu({
       icon: <Info className="w-5 h-5" />,
     },
     {
-      href: "#services",
+      href: "/services",
       text: t("services.badge"),
       icon: <Stethoscope className="w-5 h-5" />,
+    },
+    {
+      href: "/articles",
+      text: t("articles.badge"),
+      icon: <Newspaper className="w-5 h-5" />,
     },
     {
       href: "#contact-us",
@@ -180,13 +187,16 @@ export default function MobileMenu({
                 <span className="w-9 h-9 flex items-center justify-center bg-[#CDB255]/10 rounded-full text-[#CDB255]">
                   <Phone className="w-4.5 h-4.5" />
                 </span>
-                <span className="font-medium text-gray-600 text-[14px]">
+                <span
+                  className="font-medium text-gray-600 text-[14px]"
+                  dir="ltr"
+                >
                   {settings?.telephone || "01234567890"}
                 </span>
               </a>
 
               <Link
-                href="/"
+                href={pathname}
                 locale={locale === "ar" ? "en" : "ar"}
                 className="flex items-center gap-3 text-gray-700 p-1.5 hover:bg-gray-50 rounded-lg transition-colors"
                 onClick={onClose}

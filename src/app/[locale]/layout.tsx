@@ -93,7 +93,7 @@ export async function generateMetadata({
     category: "Health",
 
     verification: {
-      google: "",
+      google: process.env.NEXT_GOOGLE_VERIFICATION || "",
     },
   };
 }

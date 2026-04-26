@@ -6,10 +6,11 @@ export default function FooterQuickLinks() {
   const t = useTranslations();
 
   const links = [
-    { label: t("medical team"), href: "#" },
-    { label: t("about us"), href: "#" },
-    { label: t("services.badge"), href: "#" },
-    { label: t("contact us"), href: "#" },
+    { label: t("medical team"), href: "/team" },
+    { label: t("about us"), href: "/about" },
+    { label: t("services.badge"), href: "/services" },
+    { label: t("articles.badge"), href: "/articles" },
+    { label: t("contact us"), href: "/contact" },
   ];
 
   return (

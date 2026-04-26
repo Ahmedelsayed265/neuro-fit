@@ -1,4 +1,4 @@
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import Image from "next/image";
 
 import { Settings } from "@/types/api";
@@ -10,6 +10,8 @@ export default function HeaderActions({
   locale: string;
   settings: Settings | null;
 }) {
+  const pathname = usePathname();
+
   return (
     <div className="hidden lg:flex justify-end items-center gap-8">
       <a
@@ -25,11 +27,11 @@ export default function HeaderActions({
             height={20}
           />
         </span>
-        {settings?.telephone || "01234567890"}
+        <span dir="ltr">{settings?.telephone || "01234567890"}</span>
       </a>
 
       <Link
-        href="/"
+        href={pathname}
         locale={locale === "ar" ? "en" : "ar"}
         className="flex items-center justify-center gap-2"
       >

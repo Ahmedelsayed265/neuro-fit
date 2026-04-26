@@ -2,7 +2,7 @@
 
 export default function FooterMap({ mapUrl }: { mapUrl?: string }) {
   return (
-    <div className="w-full h-[400px] relative">
+    <div className="w-full h-[500px] relative -mb-40 overflow-hidden">
       <iframe
         src={
           mapUrl ||
