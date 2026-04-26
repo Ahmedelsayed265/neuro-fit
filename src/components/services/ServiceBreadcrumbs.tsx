@@ -5,12 +5,14 @@ import FadeUp from "@/components/FadeUp";
 
 interface ServiceBreadcrumbsProps {
   homeLabel: string;
+  servicesLabel: string;
   serviceTitle: string;
   iconUrl: string;
 }
 
 export default function ServiceBreadcrumbs({
   homeLabel,
+  servicesLabel,
   serviceTitle,
   iconUrl,
 }: ServiceBreadcrumbsProps) {
@@ -44,6 +46,16 @@ export default function ServiceBreadcrumbs({
               className="text-white/70 hover:text-white transition-colors text-sm md:text-base"
             >
               {homeLabel}
+            </Link>
+            <ChevronLeft
+              size={16}
+              className="text-white/50 rtl:rotate-0 ltr:rotate-180"
+            />
+            <Link
+              href="/services"
+              className="text-white/70 hover:text-white transition-colors text-sm md:text-base"
+            >
+              {servicesLabel}
             </Link>
             <ChevronLeft
               size={16}

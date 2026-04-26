@@ -40,6 +40,7 @@ export default async function ServicePage({
     <>
       <ServiceBreadcrumbs 
         homeLabel={t("home")}
+        servicesLabel={t("badge")}
         serviceTitle={service.title}
         iconUrl={service.icon_url}
       />
